@@ -7,7 +7,7 @@ import { SoundboardApp } from "@/apps/soundboard";
 import { FinderApp } from "@/apps/finder";
 import { PaintApp } from "@/apps/paint";
 import { VideosApp } from "@/apps/videos";
-import { PcApp } from "@/apps/pc";
+
 import { PhotoBoothApp } from "@/apps/photo-booth";
 import { SynthApp } from "@/apps/synth";
 import { IpodApp } from "@/apps/ipod";
@@ -124,14 +124,7 @@ export const appRegistry = {
       minSize: { width: 720, height: 290 },
     } as WindowConstraints,
   },
-  [PcApp.id]: {
-    ...PcApp,
-    windowConfig: {
-      defaultSize: { width: 645, height: 511 },
-      minSize: { width: 645, height: 511 },
-      maxSize: { width: 645, height: 511 },
-    } as WindowConstraints,
-  },
+
   [TerminalApp.id]: {
     ...TerminalApp,
     windowConfig: {
