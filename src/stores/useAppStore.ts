@@ -8,6 +8,9 @@ import { ShaderType } from "@/components/shared/GalaxyBackground";
 import { DisplayMode } from "@/utils/displayMode";
 import { AIModel } from "@/types/aiModels";
 import { ensureIndexedDBInitialized } from "@/utils/indexedDB";
+
+// Add language type definition
+export type Language = "ja" | "en";
 // Re-export for backward compatibility
 export type { AIModel } from "@/types/aiModels";
 
@@ -98,6 +101,9 @@ interface AppStoreState extends AppManagerState {
   setSynthPreset: (preset: string) => void;
   displayMode: DisplayMode;
   setDisplayMode: (mode: DisplayMode) => void;
+  // Add language setting
+  language: Language;
+  setLanguage: (language: Language) => void;
   updateWindowState: (
     appId: AppId,
     position: { x: number; y: number },
@@ -173,6 +179,8 @@ export const useAppStore = create<AppStoreState>()(
       setSynthPreset: (preset) => set({ synthPreset: preset }),
       displayMode: "color",
       setDisplayMode: (mode) => set({ displayMode: mode }),
+      language: "en", // Default to English
+      setLanguage: (language) => set({ language }),
       isFirstBoot: true,
       setHasBooted: () => {
         set({ isFirstBoot: false });
@@ -892,6 +900,7 @@ export const useAppStore = create<AppStoreState>()(
         htmlPreviewSplit: state.htmlPreviewSplit,
         currentWallpaper: state.currentWallpaper,
         displayMode: state.displayMode,
+        language: state.language,
         isFirstBoot: state.isFirstBoot,
         wallpaperSource: state.wallpaperSource,
         uiVolume: state.uiVolume,
