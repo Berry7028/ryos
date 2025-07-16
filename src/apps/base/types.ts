@@ -30,7 +30,6 @@ export interface BaseApp<TInitialData = unknown> {
     | "finder"
     | "paint"
     | "videos"
-    | "pc"
     | "photo-booth"
     | "synth"
     | "ipod"

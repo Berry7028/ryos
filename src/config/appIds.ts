@@ -10,7 +10,6 @@ export const appIds = [
   "videos",
   "ipod",
   "synth",
-  "pc",
   "terminal",
   "control-panels",
 ] as const;
