@@ -2519,7 +2519,7 @@ assistant
             id: "system",
             role: "system",
             content:
-              "You are a coding assistant running in the terminal app on ryOS.",
+              "You are a coding assistant running in the terminal app on ryo.",
           },
         ]);
 
@@ -2702,7 +2702,7 @@ assistant
           id: "system",
           role: "system",
           content:
-            "You are a coding assistant running in the terminal app on ryOS.",
+            "You are a coding assistant running in the terminal app on ryo.",
         },
       ]);
 
@@ -2736,7 +2736,7 @@ assistant
           id: "system",
           role: "system",
           content:
-            "You are a coding assistant running in the terminal app on ryOS.",
+            "You are a coding assistant running in the terminal app on ryo.",
         },
       ]);
 
@@ -3543,9 +3543,9 @@ assistant
             version: "1.0",
             creator: {
               name: "Ryo",
-              url: "https://github.com/ryokun6/ryos",
+              url: "https://github.com/ryokun6/ryo",
             },
-            github: "https://github.com/ryokun6/ryos",
+            github: "https://github.com/ryokun6/ryo",
             icon: "/icons/terminal.png",
           }
         }

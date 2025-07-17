@@ -196,7 +196,7 @@ export const useVideoStore = create<VideoStoreState>()(
       },
     }),
     {
-      name: "ryos:videos",
+      name: "ryo:videos",
       version: CURRENT_VIDEO_STORE_VERSION,
       migrate: () => {
         console.log(`Migrating video store to clean ID-based version ${CURRENT_VIDEO_STORE_VERSION}`);

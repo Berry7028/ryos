@@ -724,7 +724,7 @@ export const useIpodStore = create<IpodState>()(
       },
     }),
     {
-      name: "ryos:ipod", // Unique name for localStorage persistence
+      name: "ryo:ipod", // Unique name for localStorage persistence
       version: CURRENT_IPOD_STORE_VERSION, // Set the current version
       partialize: (state) => ({
         // Keep tracks and originalOrder here initially for migration

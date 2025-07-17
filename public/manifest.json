@@ -1,6 +1,6 @@
 {
-  "name": "ryOS",
-  "short_name": "ryOS",
+  "name": "ryo",
+  "short_name": "ryo",
   "description": "A web-based OS experience, made with Cursor",
   "start_url": "/",
   "display": "standalone",

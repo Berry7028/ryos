@@ -882,7 +882,7 @@ export const useAppStore = create<AppStoreState>()(
       setAvatarPosition: (position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | null) => set({ avatarPosition: position }),
     }),
     {
-      name: "ryos:app-store",
+      name: "ryo:app-store",
       version: CURRENT_APP_STORE_VERSION,
       partialize: (state): Partial<AppStoreState> => ({
         windowOrder: state.windowOrder,

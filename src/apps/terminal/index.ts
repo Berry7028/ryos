@@ -53,9 +53,9 @@ export const TerminalApp: BaseApp = {
     version: "1.0",
     creator: {
       name: "Ryo Lu",
-      url: "https://github.com/ryokun6/ryos",
+      url: "https://github.com/ryokun6/ryo",
     },
-    github: "https://github.com/ryokun6/ryos",
+    github: "https://github.com/ryokun6/ryo",
     icon: "/icons/terminal.png",
   },
 };

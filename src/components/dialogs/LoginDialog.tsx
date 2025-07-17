@@ -186,7 +186,7 @@ export function LoginDialog({
       >
         <DialogHeader>
           <DialogTitle className="font-normal text-[16px]">
-            ryOS Login
+            ryo Login
           </DialogTitle>
           <DialogDescription className="sr-only">
             {activeTab === "login"

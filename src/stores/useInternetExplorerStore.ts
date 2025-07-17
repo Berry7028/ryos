@@ -73,7 +73,7 @@ export const DEFAULT_TIMELINE: { [year: string]: string } = {
   "2040":
     "AI city governance. Quantum-profit compute. Desktop molecular printers. Smart-dust logistics. Neuromorphic cores. Tactile-holo rooms. Life+20 gene edits. Cancer cured. Orbital-solar farms.",
   "2050":
-    "Cloud mind-backups. Digital-heir laws. Sentient-AI rights fight. Medical neural-dust. Photoreal AR lenses. Designer embryos. Age-decel commonplace. Fusion grids dominant.",
+    "Cloud mind-backups. Digital-heir laws. Sentient-AI rights fight. Medical neural-dust. Photoreal AR lenses. Designer embryo. Age-decel commonplace. Fusion grids dominant.",
   "2060":
     "Human-AI merge wave. Symbiont organs stock. Quantum neural mesh. Home matter assembler. Age reversal < 40. 150-yr median lives. Zero-carbon fusion grid.",
   "2070":
@@ -829,7 +829,7 @@ export const useInternetExplorerStore = create<InternetExplorerStore>()(
       updateBrowserState: () => {},
     }),
     {
-      name: "ryos:internet-explorer",
+      name: "ryo:internet-explorer",
       version: CURRENT_IE_STORE_VERSION,
       partialize: (state) => ({
         url: state.url,

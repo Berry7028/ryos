@@ -6,7 +6,7 @@ export const helpItems = [
     icon: "💬",
     title: "Chat with Ryo",
     description:
-      "Type your message to chat with Ryo, generate code, or help with ryOS.",
+      "Type your message to chat with Ryo, generate code, or help with ryo.",
   },
   {
     icon: "#️⃣",
@@ -47,7 +47,7 @@ export const appMetadata = {
     name: "Ryo Lu",
     url: "https://ryo.lu",
   },
-  github: "https://github.com/ryokun6/ryos",
+  github: "https://github.com/ryokun6/ryo",
   icon: "/icons/question.png",
 };
 
