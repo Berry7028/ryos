@@ -269,7 +269,17 @@ export function Desktop({
       />
       {avatarSrc && avatarPosition && (
         <div className={`absolute z-[-5] ${avatarPosition === 'top-left' ? 'top-0 left-0' : avatarPosition === 'top-right' ? 'top-0 right-0' : avatarPosition === 'bottom-left' ? 'bottom-0 left-0' : 'bottom-0 right-0'} p-4`}>
-          <img src={avatarSrc} alt='Avatar' className='w-24 h-24 object-contain' />
+          <img 
+            src={avatarSrc} 
+            alt='Avatar' 
+            className='w-24 h-24 object-contain'
+            onLoad={() => {
+              console.log('[Desktop] Avatar loaded:', { avatarSrc, avatarPosition });
+            }}
+            onError={() => {
+              console.error('[Desktop] Avatar failed to load:', avatarSrc);
+            }}
+          />
         </div>
       )}
       <div className="pt-8 p-4 flex flex-col items-end h-[calc(100%-2rem)] relative z-[1]">

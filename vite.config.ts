@@ -13,7 +13,7 @@ export default defineConfig({
     },
     proxy: {
       '/api': {
-        target: 'https://ryos-red.vercel.app/',
+        target: 'https://koutaaaa0728.vercel.app/',
         changeOrigin: true,
         secure: true,
       }

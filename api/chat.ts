@@ -120,7 +120,7 @@ interface SystemState {
 }
 
 // Allowed origins for API requests
-const ALLOWED_ORIGINS = new Set(["https://ryos-red.vercel.app/", "http://localhost:3000", "http://localhost:5173"]);
+const ALLOWED_ORIGINS = new Set(["https://koutaaaa0728.vercel.app/", "http://localhost:3000", "http://localhost:5173"]);
 
 // Function to validate request origin
 // Only allow explicit origins defined in ALLOWED_ORIGINS – no wildcard ports or IP fallbacks

@@ -1404,15 +1404,17 @@ export function ControlPanelsAppComponent({
     }
   };
 
-  useEffect(() => {
-    // Set default avatar if none is set
-    if (!avatarSrc) {
-      setAvatarSrc('/assets/images/avatars/default-avatar.png');
-    }
-    if (!avatarPosition) {
-      setAvatarPosition('bottom-right');
-    }
-  }, [avatarSrc, avatarPosition, setAvatarSrc, setAvatarPosition]);
+  // Remove automatic avatar setting completely - users should explicitly set avatar if they want one
+  // useEffect(() => {
+  //   // Remove automatic avatar setting - users should explicitly set avatar if they want one
+  //   // Previously this was automatically setting default avatar and position
+  //   // if (!avatarSrc) {
+  //   //   setAvatarSrc('/assets/images/avatars/default-avatar.png');
+  //   // }
+  //   // if (!avatarPosition) {
+  //   //   setAvatarPosition('bottom-right');
+  //   // }
+  // }, [avatarSrc, avatarPosition, setAvatarSrc, setAvatarPosition]);
 
   if (!isWindowOpen) return null;
 

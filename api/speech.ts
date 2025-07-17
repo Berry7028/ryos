@@ -2,7 +2,7 @@ import { experimental_generateSpeech as generateSpeech } from "ai";
 import { openai } from "@ai-sdk/openai";
 
 // Allowed origins for CORS
-const ALLOWED_ORIGINS = new Set(["https://ryos-red.vercel.app/", "http://localhost:3000", "http://localhost:5173"]);
+const ALLOWED_ORIGINS = new Set(["https://koutaaaa0728.vercel.app/", "http://localhost:3000", "http://localhost:5173"]);
 
 // --- Default Configuration -----------------------------------------------
 
