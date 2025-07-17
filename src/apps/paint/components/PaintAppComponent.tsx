@@ -454,7 +454,7 @@ export const PaintAppComponent: React.FC<AppProps<PaintInitialData>> = ({
         onNavigatePrevious={onNavigatePrevious}
       >
         <div
-          className="flex flex-col h-full w-full min-h-0 p-4 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900"
+          className="flex flex-col h-full w-full min-h-0 p-4 bg-background"
         >
           <div className="flex flex-1 gap-2 w-full min-h-0 px-1">
             <div className="flex flex-col gap-2 w-[84px] shrink-0">
