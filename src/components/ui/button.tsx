@@ -50,12 +50,12 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, soundDisabled = false, ...props }, ref) => {
-    const { playSound } = useSound();
+    const { play: playClick } = useSound(Sounds.BUTTON_CLICK, 0.3);
     const Comp = asChild ? Slot : "button";
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
       if (!soundDisabled) {
-        playSound(Sounds.BUTTON_CLICK);
+        playClick();
       }
       if (props.onClick) {
         props.onClick(e);
