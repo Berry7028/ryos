@@ -673,10 +673,14 @@ export function TerminalAppComponent({
   // Initialize with welcome message
   useEffect(() => {
     const currentTime = new Date().toLocaleTimeString();
-    const asciiArt = `     __  __ 
- _  /  \\(_  
-| \\/\\__/__) 
-  /         `;
+    const asciiArt = `  ###  ##   #####   ##   ##  ######     ##
+                        ##  ##  ##   ##  ##   ##  # ## #    ####
+                        ## ##   ##   ##  ##   ##    ##     ##  ##
+                        ####    ##   ##  ##   ##    ##     ##  ##
+                        ## ##   ##   ##  ##   ##    ##     ######
+                        ##  ##  ##   ##  ##   ##    ##     ##  ##
+                        ###  ##   #####    #####    ####    ##  ##
+`;
 
     setCommandHistory([
       {
