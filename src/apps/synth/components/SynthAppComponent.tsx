@@ -824,12 +824,12 @@ export function SynthAppComponent({
       >
         <div
           ref={appContainerRef}
-          className="flex flex-col h-full w-full bg-[#1a1a1a] text-white overflow-hidden select-none"
+          className="flex flex-col h-full w-full bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 text-white overflow-hidden select-none"
         >
           {/* Main content area */}
           <div className="flex flex-col flex-1 min-h-0 w-full overflow-hidden">
             {/* Presets section */}
-            <div className="p-4 py-4 pb-3 bg-[#2a2a2a] w-full border-b border-[#3a3a3a] z-[50] relative">
+            <div className="p-4 py-4 pb-3 bg-black/20 backdrop-blur-sm w-full border-b border-white/10 z-[50] relative">
               <div className="flex justify-between items-center">
                 <div className="flex gap-0 overflow-x-auto">
                   {/* Mobile preset selector */}
@@ -841,15 +841,15 @@ export function SynthAppComponent({
                         if (preset) loadPreset(preset);
                       }}
                     >
-                      <SelectTrigger className="w-full bg-black border-[#3a3a3a] text-white font-geneva-12 text-[12px] p-2">
+                      <SelectTrigger className="w-full bg-black/40 backdrop-blur-sm border-white/20 text-white font-system text-[12px] p-2 rounded-lg">
                         <SelectValue placeholder="Select Preset" />
                       </SelectTrigger>
-                      <SelectContent className="bg-black border-[#3a3a3a] text-white">
+                      <SelectContent className="bg-black/90 backdrop-blur-xl border-white/20 text-white rounded-lg">
                         {presets.map((preset) => (
                           <SelectItem
                             key={preset.id}
                             value={preset.id}
-                            className="font-geneva-12 text-[12px] select-none"
+                            className="font-system text-[12px] select-none hover:bg-white/10 rounded-md"
                           >
                             {preset.name}
                           </SelectItem>
@@ -925,7 +925,7 @@ export function SynthAppComponent({
                       damping: 25,
                       mass: 0.8,
                     }}
-                    className="absolute top-0 inset-x-0 w-full bg-neutral-900/90 backdrop-blur-xl p-4 z-[40] select-none"
+                    className="absolute top-0 inset-x-0 w-full bg-black/30 backdrop-blur-xl border-b border-white/10 p-4 z-[40] select-none modern-shadow-lg"
                   >
                     <div className="flex flex-col md:flex-row md:flex-wrap md:items-start gap-6">
                       <div className="md:min-w-[200px] md:flex-grow md:flex-1 md:flex-basis-0">

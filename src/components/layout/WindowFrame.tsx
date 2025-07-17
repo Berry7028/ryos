@@ -676,24 +676,18 @@ export function WindowFrame({
 
         <div
           className={cn(
-            "w-full h-full flex flex-col border-[2px] border-black rounded-lg overflow-hidden",
-            !transparentBackground && "bg-system7-window-bg",
-            isForeground ? "shadow-[2px_2px_0px_0px_rgba(0,0,0,0.5)]" : ""
+            "w-full h-full flex flex-col border border-border rounded-xl overflow-hidden bg-card/95 backdrop-blur-sm",
+            isForeground ? "modern-shadow-lg" : "modern-shadow",
+            "transition-all duration-200 ease-in-out hover-lift"
           )}
           style={getSwipeStyle()}
         >
           {/* Title bar */}
           <div
             className={cn(
-              "flex items-center shrink-0 h-6 min-h-6 mx-0 my-[0.1rem] mb-0 px-[0.1rem] py-[0.2rem] select-none cursor-move border-b-[1.5px] user-select-none z-50 draggable-area",
-              transparentBackground && "mt-0 h-6.5",
-              isForeground
-                ? transparentBackground
-                  ? "bg-white/70 backdrop-blur-sm border-b-black"
-                  : "bg-white bg-[linear-gradient(#000_50%,transparent_0)] bg-clip-content bg-[length:6.6666666667%_13.3333333333%] border-b-black"
-                : transparentBackground
-                ? "bg-white/20 backdrop-blur-sm border-b-black"
-                : "bg-white border-b-gray-400"
+              "flex items-center shrink-0 h-12 px-4 py-2 select-none cursor-move border-b border-border/50 user-select-none z-50 draggable-area",
+              "bg-muted/50 backdrop-blur-sm",
+              isForeground ? "border-border" : "border-border/30"
             )}
             onMouseDown={handleMouseDownWithForeground}
             onTouchStart={(e: React.TouchEvent<HTMLElement>) => {
@@ -717,7 +711,7 @@ export function WindowFrame({
               onClick={handleClose}
               onMouseDown={(e) => e.stopPropagation()}
               onTouchStart={(e) => e.stopPropagation()}
-              className="relative ml-2 w-4 h-4 cursor-default select-none"
+              className="relative w-3 h-3 rounded-full bg-destructive hover:bg-destructive/80 cursor-pointer select-none transition-colors duration-150"
             >
               <div className="absolute inset-0 -m-2" />{" "}
               {/* Larger click area */}
@@ -743,7 +737,7 @@ export function WindowFrame({
               }}
               onTouchMove={(e) => e.preventDefault()}
             >
-              <span className="truncate">{title}</span>
+              <span className="truncate font-medium text-sm">{title}</span>
             </span>
             <div className="mr-2 w-4 h-4" />
           </div>

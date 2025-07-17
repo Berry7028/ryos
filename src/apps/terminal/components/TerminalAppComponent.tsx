@@ -3493,7 +3493,7 @@ assistant
         onNavigatePrevious={onNavigatePrevious}
       >
         <motion.div
-          className="flex flex-col h-full w-full bg-black/80 backdrop-blur-lg text-white antialiased font-monaco p-2 overflow-hidden select-text"
+          className="flex flex-col h-full w-full bg-gradient-to-br from-slate-900 via-slate-800/30 to-slate-900 backdrop-blur-lg text-white antialiased font-mono p-4 overflow-hidden select-text modern-shadow-lg"
           style={{
             fontSize: `${fontSize}px`,
             fontFamily:

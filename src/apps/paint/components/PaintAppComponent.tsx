@@ -454,22 +454,17 @@ export const PaintAppComponent: React.FC<AppProps<PaintInitialData>> = ({
         onNavigatePrevious={onNavigatePrevious}
       >
         <div
-          className="flex flex-col h-full w-full min-h-0 p-2"
-          style={{
-            backgroundImage: 'url("/patterns/Property 1=7.svg")',
-            backgroundRepeat: "repeat",
-            backgroundColor: "#c0c0c0",
-          }}
+          className="flex flex-col h-full w-full min-h-0 p-4 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900"
         >
           <div className="flex flex-1 gap-2 w-full min-h-0 px-1">
             <div className="flex flex-col gap-2 w-[84px] shrink-0">
-              <div className="bg-white border border-black w-full shadow-[2px_2px_0px_0px_rgba(0,0,0,0.5)]">
+              <div className="bg-card border border-border w-full modern-shadow rounded-lg">
                 <PaintToolbar
                   selectedTool={selectedTool}
                   onToolSelect={handleToolSelect}
                 />
               </div>
-              <div className="bg-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.5)]">
+              <div className="bg-card border border-border modern-shadow rounded-lg">
                 <PaintStrokeSettings
                   strokeWidth={strokeWidth}
                   onStrokeWidthChange={setStrokeWidth}
