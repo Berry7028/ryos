@@ -33,8 +33,6 @@ import { v4 as uuidv4 } from "uuid";
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 import React from "react";
-import { LANGUAGE_NAMES, setCurrentLanguage, useT } from "@/lib/i18n";
-import { Language } from "@/stores/useAppStore";
 
 interface StoreItem {
   name: string;
@@ -225,8 +223,6 @@ export function ControlPanelsAppComponent({
     masterVolume,
     setMasterVolume,
     setCurrentWallpaper,
-    language,
-    setLanguage,
   } = useAppStoreShallow((s) => ({
     debugMode: s.debugMode,
     setDebugMode: s.setDebugMode,
@@ -257,8 +253,6 @@ export function ControlPanelsAppComponent({
     masterVolume: s.masterVolume,
     setMasterVolume: s.setMasterVolume,
     setCurrentWallpaper: s.setCurrentWallpaper,
-    language: s.language,
-    setLanguage: s.setLanguage,
   }));
 
   // Use auth hook
@@ -301,16 +295,8 @@ export function ControlPanelsAppComponent({
 
   // Log out all devices state
   const [isLoggingOutAllDevices, setIsLoggingOutAllDevices] = useState(false);
-  
-  // Translation function
-  const t = useT();
 
   // Password status is now automatically checked by the store when username/token changes
-
-  // Initialize i18n current language
-  React.useEffect(() => {
-    setCurrentLanguage(language);
-  }, [language]);
 
   // Debug hasPassword value
   React.useEffect(() => {
@@ -424,12 +410,6 @@ export function ControlPanelsAppComponent({
 
   const handleSynthPresetChange = (value: string) => {
     setSynthPreset(value);
-  };
-
-  const handleLanguageChange = (value: string) => {
-    const newLanguage = value as Language;
-    setLanguage(newLanguage);
-    setCurrentLanguage(newLanguage);
   };
 
   // Mute toggle handlers
@@ -1433,19 +1413,19 @@ export function ControlPanelsAppComponent({
                 value="appearance"
                 className="relative flex-1 h-6 px-2 -mb-[1px] rounded-t bg-[#D4D4D4] data-[state=active]:bg-[#E3E3E3] border border-[#808080] data-[state=active]:border-b-[#E3E3E3] shadow-none! text-[16px]"
               >
-                {t("controlPanels.appearance")}
+                Appearance
               </TabsTrigger>
               <TabsTrigger
                 value="sound"
                 className="relative flex-1 h-6 px-2 -mb-[1px] rounded-t bg-[#D4D4D4] data-[state=active]:bg-[#E3E3E3] border border-[#808080] data-[state=active]:border-b-[#E3E3E3] shadow-none! text-[16px]"
               >
-                {t("controlPanels.sound")}
+                Sound
               </TabsTrigger>
               <TabsTrigger
                 value="system"
                 className="relative flex-1 h-6 px-2 -mb-[1px] rounded-t bg-[#D4D4D4] data-[state=active]:bg-[#E3E3E3] border border-[#808080] data-[state=active]:border-b-[#E3E3E3] shadow-none! text-[16px]"
               >
-                {t("controlPanels.system")}
+                System
               </TabsTrigger>
             </TabsList>
 
@@ -1636,32 +1616,6 @@ export function ControlPanelsAppComponent({
                       </div>
                     </div>
                   )}
-                </div>
-
-                <hr className="border-gray-400 my-4" />
-
-                {/* Language Settings Section */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-col gap-1">
-                      <Label>{t("controlPanels.language.label")}</Label>
-                      <Label className="text-[11px] text-gray-600 font-geneva-12">
-                        {t("controlPanels.language.description")}
-                      </Label>
-                    </div>
-                    <Select value={language} onValueChange={handleLanguageChange}>
-                      <SelectTrigger className="w-[120px]">
-                        <SelectValue placeholder="Select language" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {Object.entries(LANGUAGE_NAMES).map(([key, name]) => (
-                          <SelectItem key={key} value={key}>
-                            {name}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
                 </div>
 
                 <hr className="border-gray-400 my-4" />

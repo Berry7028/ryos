@@ -17,7 +17,6 @@ import { useAppStoreShallow } from "@/stores/helpers";
 import { Slider } from "@/components/ui/slider";
 import { Volume1, Volume2, VolumeX, Settings } from "lucide-react";
 import { useSound, Sounds } from "@/hooks/useSound";
-import { useT } from "@/lib/i18n";
 
 const finderHelpItems = [
   {
@@ -116,7 +115,6 @@ function DefaultMenuItems() {
   const launchApp = useLaunchApp();
   const [isHelpDialogOpen, setIsHelpDialogOpen] = useState(false);
   const [isAboutDialogOpen, setIsAboutDialogOpen] = useState(false);
-  const t = useT();
 
   const handleLaunchFinder = (path: string) => {
     launchApp("finder", { initialPath: path });
@@ -132,7 +130,7 @@ function DefaultMenuItems() {
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            {t("menu.file")}
+            File
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -176,7 +174,7 @@ function DefaultMenuItems() {
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            {t("menu.edit")}
+            Edit
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -229,7 +227,7 @@ function DefaultMenuItems() {
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            {t("menu.view")}
+            View
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -392,7 +390,7 @@ function DefaultMenuItems() {
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            {t("menu.help")}
+            Help
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">

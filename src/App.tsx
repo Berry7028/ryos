@@ -7,18 +7,16 @@ import { useAppStoreShallow } from "@/stores/helpers";
 import { BootScreen } from "./components/dialogs/BootScreen";
 import { getNextBootMessage, clearNextBootMessage } from "./utils/bootMessage";
 import { AnyApp } from "./apps/base/types";
-import { setCurrentLanguage } from "@/lib/i18n";
 
 // Convert registry to array
 const apps: AnyApp[] = Object.values(appRegistry);
 
 function App() {
-  const { displayMode, isFirstBoot, setHasBooted, language } = useAppStoreShallow(
+  const { displayMode, isFirstBoot, setHasBooted } = useAppStoreShallow(
     (state) => ({
       displayMode: state.displayMode,
       isFirstBoot: state.isFirstBoot,
       setHasBooted: state.setHasBooted,
-      language: state.language,
     })
   );
   const [bootScreenMessage, setBootScreenMessage] = useState<string | null>(
@@ -29,10 +27,6 @@ function App() {
   useEffect(() => {
     applyDisplayMode(displayMode);
   }, [displayMode]);
-
-  useEffect(() => {
-    setCurrentLanguage(language);
-  }, [language]);
 
   useEffect(() => {
     // Only show boot screen for system operations (reset/restore/format/debug)
