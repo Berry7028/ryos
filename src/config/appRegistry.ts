@@ -2,7 +2,6 @@ import { TextEditApp } from "@/apps/textedit";
 import { InternetExplorerApp } from "@/apps/internet-explorer";
 import { ChatsApp } from "@/apps/chats";
 import ControlPanelsApp from "@/apps/control-panels";
-import { MinesweeperApp } from "@/apps/minesweeper";
 import { SoundboardApp } from "@/apps/soundboard";
 import { FinderApp } from "@/apps/finder";
 import { PaintApp } from "@/apps/paint";
@@ -93,14 +92,6 @@ export const appRegistry = {
       defaultSize: { width: 644, height: 510 },
       minSize: { width: 644, height: 510 },
       maxSize: { width: 644, height: 510 },
-    } as WindowConstraints,
-  },
-  [MinesweeperApp.id]: {
-    ...MinesweeperApp,
-    windowConfig: {
-      defaultSize: { width: 305, height: 400 },
-      minSize: { width: 305, height: 400 },
-      maxSize: { width: 305, height: 400 },
     } as WindowConstraints,
   },
   [VideosApp.id]: {

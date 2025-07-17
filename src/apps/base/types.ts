@@ -26,7 +26,6 @@ export interface BaseApp<TInitialData = unknown> {
     | "chats"
     | "textedit"
     | "control-panels"
-    | "minesweeper"
     | "finder"
     | "paint"
     | "videos"

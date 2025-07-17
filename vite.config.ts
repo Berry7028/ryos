@@ -11,6 +11,13 @@ export default defineConfig({
     cors: {
       origin: ["*"],
     },
+    proxy: {
+      '/api': {
+        target: 'https://os.ryo.lu',
+        changeOrigin: true,
+        secure: true,
+      }
+    }
   },
   plugins: [react(), tailwindcss(), vercel()],
   resolve: {

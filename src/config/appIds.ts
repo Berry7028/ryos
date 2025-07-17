@@ -6,7 +6,6 @@ export const appIds = [
   "textedit",
   "paint",
   "photo-booth",
-  "minesweeper",
   "videos",
   "ipod",
   "synth",
