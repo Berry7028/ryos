@@ -10,8 +10,9 @@ import { SUPPORTED_AI_MODELS } from "../src/types/aiModels";
 
 // Allowed origins for API requests (reuse list from chat.ts)
 const ALLOWED_ORIGINS = new Set([
-  "https://os.ryo.lu",
+  "https://ryos-red.vercel.app/",
   "http://localhost:3000",
+  "http://localhost:5173", // Vite dev server
 ]);
 
 // After ALLOWED_ORIGINS const block, add Redis setup and cache prefix
@@ -212,7 +213,7 @@ export default async function handler(req: Request) {
 
     // Prepend the dynamic prompt as a system message
     const enrichedMessages = [
-      { role: "system", content: systemPrompt },
+      { role: "system" as const, content: systemPrompt },
       ...messages,
     ];
 

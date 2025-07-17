@@ -220,12 +220,42 @@ export default async function handler(req: Request) {
     );
 
     if (!normalizedUrlForKey) {
-      // Handle case where normalization failed
-      logError(requestId, "URL normalization failed for AI cache key", null);
-      return new Response(
-        JSON.stringify({ error: "URL normalization failed" }),
-        { status: 500, headers: { "Content-Type": "application/json" } }
-      );
+      // Handle case where normalization failed - use original URL as fallback
+      logError(requestId, "URL normalization failed for AI cache key, using original URL", { originalUrl: aiUrl });
+      const fallbackKey = `${IE_CACHE_PREFIX}${encodeURIComponent(aiUrl)}:${year}`;
+      logInfo(requestId, `Using fallback AI cache key: ${fallbackKey}`);
+      
+      try {
+        const redis = new Redis({
+          url: process.env.REDIS_KV_REST_API_URL as string,
+          token: process.env.REDIS_KV_REST_API_TOKEN as string,
+        });
+        const html = (await redis.lindex(fallbackKey, 0)) as string | null;
+        if (html) {
+          logInfo(requestId, `AI Cache HIT for fallback key: ${fallbackKey}`);
+          return new Response(html, {
+            headers: {
+              "Content-Type": "text/html; charset=utf-8",
+              "Access-Control-Allow-Origin": "*",
+              "X-AI-Cache": "HIT",
+            },
+          });
+        }
+        logInfo(requestId, `AI Cache MISS for fallback key: ${fallbackKey}`);
+        return new Response(JSON.stringify({ aiCache: false }), {
+          status: 404,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        });
+      } catch (e) {
+        logError(requestId, "Error checking AI cache with fallback key", e);
+        return new Response(JSON.stringify({ error: (e as Error).message }), {
+          status: 500,
+          headers: { "Content-Type": "application/json" },
+        });
+      }
     }
 
     try {
@@ -276,11 +306,86 @@ export default async function handler(req: Request) {
       `Normalized URL for list-cache key: ${normalizedUrlForKey}`
     );
     if (!normalizedUrlForKey) {
-      logError(requestId, "URL normalization failed for list-cache key", null);
-      return new Response(
-        JSON.stringify({ error: "URL normalization failed" }),
-        { status: 500, headers: { "Content-Type": "application/json" } }
-      );
+      logError(requestId, "URL normalization failed for list-cache key, using original URL", { originalUrl: listUrl });
+      // Use the original URL as fallback for scanning
+      const fallbackUrl = encodeURIComponent(listUrl);
+      logInfo(requestId, `Using fallback URL for list-cache: ${fallbackUrl}`);
+      
+      try {
+        const redis = new Redis({
+          url: process.env.REDIS_KV_REST_API_URL as string,
+          token: process.env.REDIS_KV_REST_API_TOKEN as string,
+        });
+
+        const uniqueYears = new Set<string>();
+
+        // Scan for AI Cache keys with fallback URL
+        const aiPattern = `${IE_CACHE_PREFIX}${fallbackUrl}:*`;
+        const aiKeyPrefixLength = `${IE_CACHE_PREFIX}${fallbackUrl}:`.length;
+        logInfo(requestId, `Scanning Redis for AI cache with fallback pattern: ${aiPattern}`);
+        let aiCursor = 0;
+        do {
+          const [nextCursor, keys] = await redis.scan(aiCursor, {
+            match: aiPattern,
+            count: 100,
+          });
+          aiCursor = parseInt(nextCursor as unknown as string, 10);
+          for (const key of keys) {
+            const yearPart = key.substring(aiKeyPrefixLength);
+            if (yearPart && /^(\d{1,4}( BC)?|\d+ CE)$/.test(yearPart)) {
+              uniqueYears.add(yearPart);
+            }
+          }
+        } while (aiCursor !== 0);
+
+        // Scan for Wayback Cache keys with fallback URL
+        const waybackPattern = `${WAYBACK_CACHE_PREFIX}${fallbackUrl}:*`;
+        const waybackKeyPrefixLength = `${WAYBACK_CACHE_PREFIX}${fallbackUrl}:`.length;
+        logInfo(requestId, `Scanning Redis for Wayback cache with fallback pattern: ${waybackPattern}`);
+        let waybackCursor = 0;
+        do {
+          const [nextCursor, keys] = await redis.scan(waybackCursor, {
+            match: waybackPattern,
+            count: 100,
+          });
+          waybackCursor = parseInt(nextCursor as unknown as string, 10);
+          for (const key of keys) {
+            const yearMonthPart = key.substring(waybackKeyPrefixLength);
+            if (yearMonthPart && /^\d{6}$/.test(yearMonthPart)) {
+              const year = yearMonthPart.substring(0, 4);
+              uniqueYears.add(year);
+            }
+          }
+        } while (waybackCursor !== 0);
+
+        const sortedYears = Array.from(uniqueYears);
+        sortedYears.sort((a, b) => {
+          if (a === "current") return -1;
+          if (b === "current") return 1;
+          const valA = parseInt(a.replace(" BC", ""), 10);
+          const valB = parseInt(b.replace(" BC", ""), 10);
+          const isABC = a.includes(" BC");
+          const isBBC = b.includes(" BC");
+          if (isABC && !isBBC) return 1;
+          if (!isABC && isBBC) return -1;
+          if (isABC && isBBC) return valA - valB;
+          return valB - valA;
+        });
+
+        logInfo(requestId, `Found ${sortedYears.length} unique cached years for fallback URL: ${listUrl}`);
+        return new Response(JSON.stringify({ years: sortedYears }), {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        });
+      } catch (e) {
+        logError(requestId, "Error listing combined cache keys with fallback", e);
+        return new Response(JSON.stringify({ error: (e as Error).message }), {
+          status: 500,
+          headers: { "Content-Type": "application/json" },
+        });
+      }
     }
 
     try {
@@ -722,7 +827,7 @@ export default async function handler(req: Request) {
 
         // Add font override styles
         const fontOverrideStyles = `
-<link rel="stylesheet" href="https://os.ryo.lu/fonts/fonts.css">
+<link rel="stylesheet" href="https://ryos-red.vercel.app//fonts/fonts.css">
 <style>img{image-rendering:pixelated!important}body,div,span,p,h1,h2,h3,h4,h5,h6,button,input,select,textarea,[style*="font-family"],[style*="sans-serif"],[style*="SF Pro Text"],[style*="-apple-system"],[style*="BlinkMacSystemFont"],[style*="Segoe UI"],[style*="Roboto"],[style*="Oxygen"],[style*="Ubuntu"],[style*="Cantarell"],[style*="Fira Sans"],[style*="Droid Sans"],[style*="Helvetica Neue"],[style*="Helvetica"],[style*="Arial"],[style*="Verdana"],[style*="Geneva"],[style*="Inter"],[style*="Hiragino Sans"],[style*="Hiragino Kaku Gothic"],[style*="Yu Gothic"],[style*="Meiryo"],[style*="MS PGothic"],[style*="MS Gothic"],[style*="Microsoft YaHei"],[style*="PingFang"],[style*="Noto Sans"],[style*="Source Han Sans"],[style*="WenQuanYi"]{font-family:"Geneva-12","ArkPixel","SerenityOS-Emoji",sans-serif!important}[style*="serif"],[style*="Georgia"],[style*="Times New Roman"],[style*="Times"],[style*="Palatino"],[style*="Bookman"],[style*="Garamond"],[style*="Cambria"],[style*="Constantia"],[style*="Hiragino Mincho"],[style*="Yu Mincho"],[style*="MS Mincho"],[style*="SimSun"],[style*="NSimSun"],[style*="Source Han Serif"],[style*="Noto Serif CJK"]{font-family:"Mondwest","Yu Mincho","Hiragino Mincho Pro","Songii TC","Georgia","Palatino","SerenityOS-Emoji",serif!important}code,pre,[style*="monospace"],[style*="Courier New"],[style*="Courier"],[style*="Lucida Console"],[style*="Monaco"],[style*="Consolas"],[style*="Inconsolata"],[style*="Source Code Pro"],[style*="Menlo"],[style*="Andale Mono"],[style*="Ubuntu Mono"]{font-family:"Monaco","ArkPixel","SerenityOS-Emoji",monospace!important}*{font-family:"Geneva-12","ArkPixel","SerenityOS-Emoji",sans-serif}</style>`;
 
         const clickInterceptorScript = `
