@@ -209,7 +209,7 @@ export function Desktop({
       return [
         {
           type: "item",
-          label: "Open",
+          label: "開く",
           onSelect: () => handleOpenApp(contextMenuAppId),
         },
       ];
@@ -218,15 +218,15 @@ export function Desktop({
       return [
         {
           type: "submenu",
-          label: "Sort By",
+          label: "並び順",
           items: [
             {
               type: "radioGroup",
               value: sortType,
               onChange: (val) => setSortType(val as SortType),
               items: [
-                { label: "Name", value: "name" },
-                { label: "Kind", value: "kind" },
+                { label: "名前", value: "name" },
+                { label: "種類", value: "kind" },
               ],
             },
           ],
@@ -234,7 +234,7 @@ export function Desktop({
         { type: "separator" },
         {
           type: "item",
-          label: "Set Wallpaper…",
+          label: "壁紙を設定…",
           onSelect: () => toggleApp("control-panels"),
         },
       ];

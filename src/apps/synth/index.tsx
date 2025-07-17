@@ -47,9 +47,9 @@ export const appMetadata = {
 
 export const SynthApp: BaseApp = {
   id: "synth",
-  name: "Synth",
-  icon: { type: "image", src: appMetadata.icon },
-  description: "A virtual synthesizer with retro aesthetics",
+  name: "シンセサイザー",
+  icon: { type: "image", src: "/icons/synth.png" },
+  description: "シンプルなシンセサイザーとサウンド生成",
   component: SynthAppComponent,
   helpItems,
   metadata: appMetadata,

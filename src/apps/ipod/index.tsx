@@ -47,9 +47,9 @@ export const appMetadata = {
 
 export const IpodApp: BaseApp<IpodInitialData> = {
   id: "ipod",
-  name: "iPod",
-  icon: { type: "image", src: appMetadata.icon },
-  description: "1st Generation iPod music player with YouTube integration",
+  name: "アイポッド",
+  icon: { type: "image", src: "/icons/ipod.png" },
+  description: "音楽プレーヤー",
   component: IpodAppComponent,
   helpItems,
   metadata: appMetadata,

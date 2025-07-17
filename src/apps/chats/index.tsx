@@ -53,9 +53,9 @@ export const appMetadata = {
 
 export const ChatsApp: BaseApp = {
   id: "chats",
-  name: "Chats",
-  icon: { type: "image", src: appMetadata.icon },
-  description: "Chat with Ryo, your personal AI assistant",
+  name: "チャット",
+  icon: { type: "image", src: "/icons/internet.png" },
+  description: "Ryoと他のAIモデルとの会話",
   component: ChatsAppComponent,
   helpItems,
   metadata: appMetadata,

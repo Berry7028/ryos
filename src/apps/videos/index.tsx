@@ -47,9 +47,9 @@ export const appMetadata = {
 
 export const VideosApp: BaseApp<VideosInitialData> = {
   id: "videos",
-  name: "Videos",
+  name: "ビデオ",
   icon: { type: "image", src: "/icons/videos.png" },
-  description: "A retro-style YouTube playlist player",
+  description: "ビデオプレーヤー",
   component: VideosAppComponent,
   helpItems,
   metadata: appMetadata,

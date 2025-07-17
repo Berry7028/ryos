@@ -47,9 +47,9 @@ export const appMetadata = {
 
 export const SoundboardApp: BaseApp = {
   id: "soundboard",
-  name: "Soundboard",
-  icon: { type: "image", src: appMetadata.icon },
-  description: "A simple soundboard app",
+  name: "サウンドボード",
+  icon: { type: "image", src: "/icons/sounds.png" },
+  description: "効果音とサウンドの再生",
   component: SoundboardAppComponent,
   helpItems,
   metadata: appMetadata,

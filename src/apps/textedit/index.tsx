@@ -48,9 +48,9 @@ export const appMetadata = {
 
 export const TextEditApp: BaseApp = {
   id: "textedit",
-  name: "TextEdit",
+  name: "テキストエディタ",
   icon: { type: "image", src: appMetadata.icon },
-  description: "A simple rich text editor",
+  description: "シンプルなリッチテキストエディタ",
   component: TextEditAppComponent,
   helpItems,
   metadata: appMetadata,

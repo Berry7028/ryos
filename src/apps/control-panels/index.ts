@@ -46,17 +46,17 @@ export const appMetadata = {
   icon: "/icons/control-panels/appearance-manager/app.png",
 };
 
-const app: BaseApp<ControlPanelsInitialData> = {
+const ControlPanelsApp: BaseApp<ControlPanelsInitialData> = {
   id: "control-panels",
-  name: "Control Panels",
+  name: "コントロールパネル",
+  description: "システム設定とコントロールパネル",
+  component: ControlPanelsAppComponent,
   icon: {
     type: "image",
     src: "/icons/control-panels/appearance-manager/app.png",
   },
-  description: "System settings and configuration",
-  component: ControlPanelsAppComponent,
   helpItems,
   metadata: appMetadata,
 };
 
-export default app;
+export default ControlPanelsApp;

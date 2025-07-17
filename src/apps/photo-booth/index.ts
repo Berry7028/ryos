@@ -53,9 +53,9 @@ export const helpItems = [
 
 export const PhotoBoothApp: BaseApp = {
   id: "photo-booth",
-  name: "Photo Booth",
+  name: "フォトブース",
   icon: { type: "image", src: "/icons/photo-booth.png" },
-  description: "Take photos with your camera and apply fun effects",
+  description: "カメラで写真撮影と楽しいエフェクトの適用",
   component: PhotoBoothComponent,
   helpItems,
   metadata: appMetadata,

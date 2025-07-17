@@ -53,9 +53,9 @@ export const appMetadata = {
 
 export const InternetExplorerApp: BaseApp<InternetExplorerInitialData> = {
   id: "internet-explorer",
-  name: "Internet Explorer",
-  icon: { type: "image", src: appMetadata.icon },
-  description: "Browse the web like it's 1999",
+  name: "インターネット エクスプローラー",
+  description: "レトロなWebブラウザ",
+  icon: { type: "image", src: "/icons/ie.png" },
   component: InternetExplorerAppComponent,
   helpItems,
   metadata: appMetadata,

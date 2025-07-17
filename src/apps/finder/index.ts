@@ -53,8 +53,8 @@ export const helpItems = [
 
 export const FinderApp: BaseApp = {
   id: "finder",
-  name: "Finder",
-  description: "Browse and manage files",
+  name: "ファインダー",
+  description: "ファイルやフォルダの管理と閲覧",
   icon: {
     type: "image",
     src: "/icons/mac.png",

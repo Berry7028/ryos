@@ -52,9 +52,9 @@ export const appMetadata = {
 
 export const PaintApp: BaseApp<PaintInitialData> = {
   id: "paint",
-  name: "MacPaint",
+  name: "ペイント",
   icon: { type: "image", src: "/icons/paint.png" },
-  description: "Classic MacPaint-style drawing application",
+  description: "クラシックなMacPaintスタイルの描画アプリ",
   component: PaintAppComponent,
   helpItems,
   metadata: appMetadata,

@@ -130,7 +130,7 @@ function DefaultMenuItems() {
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            File
+            ファイル
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -138,30 +138,30 @@ function DefaultMenuItems() {
             onClick={() => handleLaunchFinder("/")}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            New Finder Window
+            新しいFinderウィンドウ
           </DropdownMenuItem>
           <DropdownMenuItem
             disabled
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            New Folder
+            新しいフォルダ
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             disabled
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Move to Trash
+            ゴミ箱に移動
           </DropdownMenuItem>
           <DropdownMenuItem
             disabled
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Empty Trash...
+            ゴミ箱を空にする...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-            Close
+            閉じる
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -174,7 +174,7 @@ function DefaultMenuItems() {
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            Edit
+            編集
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -182,39 +182,39 @@ function DefaultMenuItems() {
             disabled
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Undo
+            取り消し
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             disabled
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Cut
+            カット
           </DropdownMenuItem>
           <DropdownMenuItem
             disabled
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Copy
+            コピー
           </DropdownMenuItem>
           <DropdownMenuItem
             disabled
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Paste
+            ペースト
           </DropdownMenuItem>
           <DropdownMenuItem
             disabled
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Clear
+            クリア
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             disabled
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Select All
+            すべて選択
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -227,7 +227,7 @@ function DefaultMenuItems() {
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            View
+            表示
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -235,44 +235,44 @@ function DefaultMenuItems() {
             checked={false}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by Small Icon</span>
+            <span>小さいアイコン</span>
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={true}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by Icon</span>
+            <span>アイコン</span>
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={false}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by List</span>
+            <span>リスト</span>
           </DropdownMenuCheckboxItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuCheckboxItem
             checked={true}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by Name</span>
+            <span>名前順</span>
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={false}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by Date</span>
+            <span>日付順</span>
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={false}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by Size</span>
+            <span>サイズ順</span>
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={false}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by Kind</span>
+            <span>種類順</span>
           </DropdownMenuCheckboxItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -285,7 +285,7 @@ function DefaultMenuItems() {
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            Go
+            移動
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -293,13 +293,13 @@ function DefaultMenuItems() {
             disabled
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Back
+            戻る
           </DropdownMenuItem>
           <DropdownMenuItem
             disabled
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Forward
+            進む
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
@@ -311,7 +311,7 @@ function DefaultMenuItems() {
               alt=""
               className="w-4 h-4 [image-rendering:pixelated]"
             />
-            Applications
+            アプリケーション
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => handleLaunchFinder("/Documents")}
@@ -322,7 +322,7 @@ function DefaultMenuItems() {
               alt=""
               className="w-4 h-4 [image-rendering:pixelated]"
             />
-            Documents
+            書類
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => handleLaunchFinder("/Images")}
@@ -333,7 +333,7 @@ function DefaultMenuItems() {
               alt=""
               className="w-4 h-4 [image-rendering:pixelated]"
             />
-            Images
+            イメージ
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => handleLaunchFinder("/Music")}
@@ -344,7 +344,7 @@ function DefaultMenuItems() {
               alt=""
               className="w-4 h-4 [image-rendering:pixelated]"
             />
-            Music
+            ミュージック
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => handleLaunchFinder("/Sites")}
@@ -355,7 +355,7 @@ function DefaultMenuItems() {
               alt=""
               className="w-4 h-4 [image-rendering:pixelated]"
             />
-            Sites
+            サイト
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => handleLaunchFinder("/Videos")}
@@ -366,7 +366,7 @@ function DefaultMenuItems() {
               alt=""
               className="w-4 h-4 [image-rendering:pixelated]"
             />
-            Videos
+            ビデオ
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => handleLaunchFinder("/Trash")}
@@ -377,7 +377,7 @@ function DefaultMenuItems() {
               alt=""
               className="w-4 h-4 [image-rendering:pixelated]"
             />
-            Trash
+            ゴミ箱
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -390,7 +390,7 @@ function DefaultMenuItems() {
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            Help
+            ヘルプ
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -398,14 +398,14 @@ function DefaultMenuItems() {
             onClick={() => setIsHelpDialogOpen(true)}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Finder Help
+            Finderヘルプ
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={() => setIsAboutDialogOpen(true)}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            About Finder
+            Finderについて
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
