@@ -129,6 +129,10 @@ interface AppStoreState extends AppManagerState {
   setIpodVolume: (vol: number) => void;
   masterVolume: number;
   setMasterVolume: (vol: number) => void;
+  avatarSrc: string | null;
+  avatarPosition: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | null;
+  setAvatarSrc: (src: string | null) => void;
+  setAvatarPosition: (position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | null) => void;
 }
 
 // Define current store version
@@ -872,6 +876,10 @@ export const useAppStore = create<AppStoreState>()(
         // Create new instance
         return state.createAppInstance(appId, initialData, title);
       },
+      avatarSrc: null as string | null,
+      avatarPosition: null as 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | null,
+      setAvatarSrc: (src: string | null) => set({ avatarSrc: src }),
+      setAvatarPosition: (position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | null) => set({ avatarPosition: position }),
     }),
     {
       name: "ryos:app-store",
@@ -901,6 +909,8 @@ export const useAppStore = create<AppStoreState>()(
         ttsVoice: state.ttsVoice,
         ipodVolume: state.ipodVolume,
         masterVolume: state.masterVolume,
+        avatarSrc: state.avatarSrc,
+        avatarPosition: state.avatarPosition,
         // Only persist open instances to avoid storing closed instances
         instances: Object.fromEntries(
           Object.entries(state.instances).filter(

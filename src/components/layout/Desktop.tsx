@@ -8,6 +8,7 @@ import { useWallpaper } from "@/hooks/useWallpaper";
 import { RightClickMenu, MenuItem } from "@/components/ui/right-click-menu";
 import { SortType } from "@/apps/finder/components/FinderMenuBar";
 import { useLongPress } from "@/hooks/useLongPress";
+import { useAppStoreShallow } from '@/stores/helpers';
 
 interface DesktopStyles {
   backgroundImage?: string;
@@ -40,6 +41,9 @@ export function Desktop({
     y: number;
   } | null>(null);
   const [contextMenuAppId, setContextMenuAppId] = useState<string | null>(null);
+
+  const avatarSrc = useAppStoreShallow(s => s.avatarSrc);
+  const avatarPosition = useAppStoreShallow(s => s.avatarPosition);
 
   // ------------------ Mobile long-press support ------------------
   // Show the desktop context menu after the user holds for 500 ms.
@@ -263,6 +267,11 @@ export function Desktop({
           display: isVideoWallpaper ? "block" : "none",
         }}
       />
+      {avatarSrc && avatarPosition && (
+        <div className={`absolute z-[-5] ${avatarPosition === 'top-left' ? 'top-0 left-0' : avatarPosition === 'top-right' ? 'top-0 right-0' : avatarPosition === 'bottom-left' ? 'bottom-0 left-0' : 'bottom-0 right-0'} p-4`}>
+          <img src={avatarSrc} alt='Avatar' className='w-24 h-24 object-contain' />
+        </div>
+      )}
       <div className="pt-8 p-4 flex flex-col items-end h-[calc(100%-2rem)] relative z-[1]">
         <div className="flex flex-col flex-wrap-reverse justify-start gap-1 content-start h-full">
           <FileIcon

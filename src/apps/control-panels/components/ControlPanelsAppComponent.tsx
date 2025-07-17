@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { WindowFrame } from "@/components/layout/WindowFrame";
 import { ControlPanelsMenuBar } from "./ControlPanelsMenuBar";
 import { HelpDialog } from "@/components/dialogs/HelpDialog";
@@ -192,6 +192,7 @@ export function ControlPanelsAppComponent({
   const [isConfirmFormatOpen, setIsConfirmFormatOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const fileToRestoreRef = useRef<File | null>(null);
+  const avatarInputRef = useRef<HTMLInputElement>(null);
   const { formatFileSystem } = useFileSystem();
   const {
     debugMode,
@@ -223,6 +224,10 @@ export function ControlPanelsAppComponent({
     masterVolume,
     setMasterVolume,
     setCurrentWallpaper,
+    setAvatarSrc,
+    setAvatarPosition,
+    avatarSrc,
+    avatarPosition,
   } = useAppStoreShallow((s) => ({
     debugMode: s.debugMode,
     setDebugMode: s.setDebugMode,
@@ -253,6 +258,10 @@ export function ControlPanelsAppComponent({
     masterVolume: s.masterVolume,
     setMasterVolume: s.setMasterVolume,
     setCurrentWallpaper: s.setCurrentWallpaper,
+    setAvatarSrc: s.setAvatarSrc,
+    setAvatarPosition: s.setAvatarPosition,
+    avatarSrc: s.avatarSrc,
+    avatarPosition: s.avatarPosition,
   }));
 
   // Use auth hook
@@ -1384,6 +1393,27 @@ export function ControlPanelsAppComponent({
     performFormat();
   };
 
+  const handleAvatarUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setAvatarSrc(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  useEffect(() => {
+    // Set default avatar if none is set
+    if (!avatarSrc) {
+      setAvatarSrc('/assets/images/avatars/default-avatar.png');
+    }
+    if (!avatarPosition) {
+      setAvatarPosition('bottom-right');
+    }
+  }, [avatarSrc, avatarPosition, setAvatarSrc, setAvatarPosition]);
+
   if (!isWindowOpen) return null;
 
   return (
@@ -1435,6 +1465,26 @@ export function ControlPanelsAppComponent({
             >
               <div className="space-y-4 h-full overflow-y-auto p-4">
                 <WallpaperPicker />
+                <div className='space-y-4'>
+                  <Label>Desktop Avatar</Label>
+                  <div className='flex gap-2'>
+                    <Button onClick={() => avatarInputRef.current?.click()}>Upload Avatar</Button>
+                    <input type='file' ref={avatarInputRef} onChange={handleAvatarUpload} accept='image/*' className='hidden' />
+                    <Select value={avatarPosition || ''} onValueChange={(val) => setAvatarPosition(val as 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | null)}>
+                      <SelectTrigger>
+                        <SelectValue placeholder='Select Position' />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value='top-left'>Top Left</SelectItem>
+                        <SelectItem value='top-right'>Top Right</SelectItem>
+                        <SelectItem value='bottom-left'>Bottom Left</SelectItem>
+                        <SelectItem value='bottom-right'>Bottom Right</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <Button onClick={() => { setAvatarSrc(null); setAvatarPosition(null); }}>Remove</Button>
+                  </div>
+                  {avatarSrc && <img src={avatarSrc} alt='Preview' className='w-16 h-16 object-cover' />}
+                </div>
               </div>
             </TabsContent>
 
