@@ -1445,19 +1445,19 @@ export function ControlPanelsAppComponent({
                 value="appearance"
                 className="relative flex-1 h-6 px-2 -mb-[1px] rounded-t bg-[#D4D4D4] data-[state=active]:bg-[#E3E3E3] border border-[#808080] data-[state=active]:border-b-[#E3E3E3] shadow-none! text-[16px]"
               >
-                Appearance
+                外観
               </TabsTrigger>
               <TabsTrigger
                 value="sound"
                 className="relative flex-1 h-6 px-2 -mb-[1px] rounded-t bg-[#D4D4D4] data-[state=active]:bg-[#E3E3E3] border border-[#808080] data-[state=active]:border-b-[#E3E3E3] shadow-none! text-[16px]"
               >
-                Sound
+                サウンド
               </TabsTrigger>
               <TabsTrigger
                 value="system"
                 className="relative flex-1 h-6 px-2 -mb-[1px] rounded-t bg-[#D4D4D4] data-[state=active]:bg-[#E3E3E3] border border-[#808080] data-[state=active]:border-b-[#E3E3E3] shadow-none! text-[16px]"
               >
-                System
+                システム
               </TabsTrigger>
             </TabsList>
 
@@ -1468,9 +1468,9 @@ export function ControlPanelsAppComponent({
               <div className="space-y-4 h-full overflow-y-auto p-4">
                 <WallpaperPicker />
                 <div className='space-y-4'>
-                  <Label>Desktop Avatar</Label>
+                  <Label>デスクトップアバター</Label>
                   <div className='flex gap-2'>
-                    <Button onClick={() => avatarInputRef.current?.click()}>Upload Avatar</Button>
+                    <Button onClick={() => avatarInputRef.current?.click()}>アバターをアップロード</Button>
                     <input type='file' ref={avatarInputRef} onChange={handleAvatarUpload} accept='image/*' className='hidden' />
                     <Select value={avatarPosition || ''} onValueChange={(val) => setAvatarPosition(val as 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | null)}>
                       <SelectTrigger>
@@ -1498,7 +1498,7 @@ export function ControlPanelsAppComponent({
                 {/* UI Sounds toggle + volume */}
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center justify-between">
-                    <Label>UI Sounds</Label>
+                    <Label>UIサウンド</Label>
                     <Switch
                       checked={uiSoundsEnabled}
                       onCheckedChange={handleUISoundsChange}
@@ -1509,7 +1509,7 @@ export function ControlPanelsAppComponent({
 
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center justify-between">
-                    <Label>Speech</Label>
+                    <Label>音声</Label>
                     <Switch
                       checked={speechEnabled}
                       onCheckedChange={handleSpeechChange}
@@ -1520,7 +1520,7 @@ export function ControlPanelsAppComponent({
 
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col gap-1">
-                    <Label>Terminal & IE Ambient Synth</Label>
+                    <Label>ターミナル & IE アンビエントシンセ</Label>
                   </div>
                   <Switch
                     checked={terminalSoundsEnabled}
@@ -1532,13 +1532,13 @@ export function ControlPanelsAppComponent({
                 {/* Chat Synth preset */}
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center justify-between">
-                    <Label>Chat Synth</Label>
+                    <Label>チャットシンセ</Label>
                     <Select
                       value={synthPreset}
                       onValueChange={handleSynthPresetChange}
                     >
                       <SelectTrigger className="w-[120px]">
-                        <SelectValue placeholder="Select a preset" />
+                        <SelectValue placeholder="プリセットを選択" />
                       </SelectTrigger>
                       <SelectContent>
                         {Object.entries(SYNTH_PRESETS).map(([key, preset]) => (
@@ -1596,7 +1596,7 @@ export function ControlPanelsAppComponent({
                             @{username}
                           </span>
                           <span className="text-[11px] text-gray-600 font-geneva-12">
-                            Logged in to ryOS
+                            ryOSにログイン中
                           </span>
                         </div>
                         <div className="flex gap-2">
@@ -1606,7 +1606,7 @@ export function ControlPanelsAppComponent({
                               onClick={promptVerifyToken}
                               className="h-7"
                             >
-                              Log In
+                              ログイン
                             </Button>
                           )}
                           {hasPassword === false ? (
@@ -1619,7 +1619,7 @@ export function ControlPanelsAppComponent({
                               }}
                               className="h-7"
                             >
-                              Set Password
+                              パスワードを設定
                             </Button>
                           ) : (
                             <Button
@@ -1627,7 +1627,7 @@ export function ControlPanelsAppComponent({
                               onClick={logout}
                               className="h-7"
                             >
-                              Log Out
+                              ログアウト
                             </Button>
                           )}
                         </div>
@@ -1652,10 +1652,10 @@ export function ControlPanelsAppComponent({
                       <div className="flex items-center justify-between">
                         <div className="flex flex-col">
                           <span className="text-[13px] font-geneva-12 font-medium">
-                            ryOS Account
+                            ryOSアカウント
                           </span>
                           <span className="text-[11px] text-gray-600 font-geneva-12">
-                            Login to send messages and more.
+                            メッセージの送信などを行うにはログインしてください。
                           </span>
                         </div>
                         <Button
@@ -1679,14 +1679,14 @@ export function ControlPanelsAppComponent({
                       onClick={handleBackup}
                       className="flex-1"
                     >
-                      Backup
+                      バックアップ
                     </Button>
                     <Button
                       variant="retro"
                       onClick={() => fileInputRef.current?.click()}
                       className="flex-1"
                     >
-                      Restore
+                      復元
                     </Button>
                     <input
                       type="file"
@@ -1697,7 +1697,7 @@ export function ControlPanelsAppComponent({
                     />
                   </div>
                   <p className="text-[11px] text-gray-600 font-geneva-12">
-                    Backup or restore all app settings and files.
+                    アプリの設定とファイルをバックアップまたは復元します。
                   </p>
                 </div>
 
@@ -1707,11 +1707,10 @@ export function ControlPanelsAppComponent({
                     onClick={handleResetAll}
                     className="w-full"
                   >
-                    Reset All Settings
+                    設定をリセット
                   </Button>
                   <p className="text-[11px] text-gray-600 font-geneva-12">
-                    This will clear all saved settings and restore default
-                    states.
+                    すべての保存された設定が削除され、デフォルトの状態に戻ります。
                   </p>
                 </div>
 
@@ -1723,11 +1722,10 @@ export function ControlPanelsAppComponent({
                     }}
                     className="w-full"
                   >
-                    Format File System
+                    ファイルシステムをフォーマット
                   </Button>
                   <p className="text-[11px] text-gray-600 font-geneva-12">
-                    This will clear all files (except sample docs), images, and
-                    custom wallpapers. ryOS will restart after format.
+                    すべてのファイル（サンプルドキュメントを除く）、画像、カスタム壁紙が削除されます。ryOSはフォーマット後に再起動します。
                   </p>
                 </div>
 
@@ -1735,9 +1733,9 @@ export function ControlPanelsAppComponent({
 
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col gap-1">
-                    <Label>Debug Mode</Label>
+                    <Label>デバッグモード</Label>
                     <Label className="text-[11px] text-gray-600 font-geneva-12">
-                      Enable debugging settings
+                      デバッグ設定を有効にする
                     </Label>
                   </div>
                   <Switch
@@ -1750,9 +1748,9 @@ export function ControlPanelsAppComponent({
                 {debugMode && (
                   <div className="flex items-center justify-between">
                     <div className="flex flex-col gap-1">
-                      <Label>Shader Effect</Label>
+                      <Label>シェーダーエフェクト</Label>
                       <Label className="text-[11px] text-gray-600 font-geneva-12">
-                        Performance intensive background effect
+                        パフォーマンスに影響する背景エフェクト
                       </Label>
                     </div>
                     <Switch
@@ -1766,9 +1764,9 @@ export function ControlPanelsAppComponent({
                 {debugMode && (
                   <div className="flex items-center justify-between">
                     <div className="flex flex-col gap-1">
-                      <Label>AI Model</Label>
+                      <Label>AIモデル</Label>
                       <Label className="text-[11px] text-gray-600 font-geneva-12">
-                        Used in Chats, IE, and more
+                        チャットやIEなどで使用されます
                       </Label>
                     </div>
                     <Select
@@ -1781,7 +1779,7 @@ export function ControlPanelsAppComponent({
                     >
                       <SelectTrigger className="w-[120px]">
                         <SelectValue placeholder="Select">
-                          {aiModel || "Select"}
+                          {aiModel || "選択"}
                         </SelectValue>
                       </SelectTrigger>
                       <SelectContent>
@@ -1799,9 +1797,9 @@ export function ControlPanelsAppComponent({
                 {debugMode && (
                   <div className="flex items-center justify-between">
                     <div className="flex flex-col gap-1">
-                      <Label>TTS Model</Label>
+                      <Label>音声合成モデル</Label>
                       <Label className="text-[11px] text-gray-600 font-geneva-12">
-                        Text-to-speech provider
+                        テキスト読み上げのプロバイダー
                       </Label>
                     </div>
                     <Select
@@ -1816,7 +1814,7 @@ export function ControlPanelsAppComponent({
                     >
                       <SelectTrigger className="w-[120px]">
                         <SelectValue placeholder="Select">
-                          {ttsModel || "Select"}
+                          {ttsModel || "選択"}
                         </SelectValue>
                       </SelectTrigger>
                       <SelectContent>
@@ -1831,11 +1829,11 @@ export function ControlPanelsAppComponent({
                 {debugMode && ttsModel && (
                   <div className="flex items-center justify-between">
                     <div className="flex flex-col gap-1">
-                      <Label>TTS Voice</Label>
+                      <Label>音声の種類</Label>
                       <Label className="text-[11px] text-gray-600 font-geneva-12">
                         {ttsModel === "elevenlabs"
-                          ? "ElevenLabs Voice ID"
-                          : "OpenAI Voice"}
+                          ? "ElevenLabs ボイスID"
+                          : "OpenAI ボイス"}
                       </Label>
                     </div>
                     {ttsModel === "elevenlabs" ? (
@@ -1878,7 +1876,7 @@ export function ControlPanelsAppComponent({
                       >
                         <SelectTrigger className="w-[120px]">
                           <SelectValue placeholder="Select">
-                            {ttsVoice || "Select"}
+                            {ttsVoice || "選択"}
                           </SelectValue>
                         </SelectTrigger>
                         <SelectContent>
@@ -1900,7 +1898,7 @@ export function ControlPanelsAppComponent({
                     <div className="flex flex-col gap-1">
                       <Label>Boot Screen</Label>
                       <Label className="text-[11px] text-gray-600 font-geneva-12">
-                        Test the boot screen animation
+                        起動画面アニメーションをテスト
                       </Label>
                     </div>
                     <Button
@@ -1911,7 +1909,7 @@ export function ControlPanelsAppComponent({
                       }}
                       className="w-fit"
                     >
-                      Show
+                      表示
                     </Button>
                   </div>
                 )}
@@ -1935,15 +1933,15 @@ export function ControlPanelsAppComponent({
           isOpen={isConfirmResetOpen}
           onOpenChange={setIsConfirmResetOpen}
           onConfirm={handleConfirmReset}
-          title="Reset All Settings"
-          description="Are you sure you want to reset all settings? This will clear all saved settings and restore default states. ryOS will restart after reset."
+          title="設定をリセット"
+          description="すべての設定をリセットしてもよろしいですか？保存されているすべての設定が削除され、デフォルトの状態に戻ります。ryOSはリセット後に再起動します。"
         />
         <ConfirmDialog
           isOpen={isConfirmFormatOpen}
           onOpenChange={setIsConfirmFormatOpen}
           onConfirm={handleConfirmFormat}
-          title="Format File System"
-          description="Are you sure you want to format the file system? This will permanently delete all documents (except sample documents), images, and custom wallpapers. ryOS will restart after format."
+          title="ファイルシステムをフォーマット"
+          description="ファイルシステムをフォーマットしてもよろしいですか？サンプルドキュメントを除くすべてのドキュメント、画像、カスタム壁紙が完全に削除されます。ryOSはフォーマット後に再起動します。"
         />
         {/* Sign Up Dialog (was SetUsernameDialog) */}
         <LoginDialog
@@ -2000,8 +1998,8 @@ export function ControlPanelsAppComponent({
           isOpen={isPasswordDialogOpen}
           onOpenChange={setIsPasswordDialogOpen}
           onSubmit={handleSetPassword}
-          title="Set Password"
-          description="Set a password to enable account recovery. You can use this password to get a new token if you lose access."
+          title="パスワードを設定"
+          description="アカウント復旧のためのパスワードを設定します。アクセスを失った場合、このパスワードを使用して新しいトークンを取得できます。"
           value={passwordInput}
           onChange={(value) => {
             setPasswordInput(value);
@@ -2009,7 +2007,7 @@ export function ControlPanelsAppComponent({
           }}
           isLoading={isSettingPassword}
           errorMessage={passwordError}
-          submitLabel="Set Password"
+          submitLabel="パスワードを設定"
         />
         <LogoutDialog
           isOpen={isLogoutConfirmDialogOpen}

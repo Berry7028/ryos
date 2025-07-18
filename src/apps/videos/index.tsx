@@ -4,38 +4,38 @@ import { VideosAppComponent } from "./components/VideosAppComponent";
 export const helpItems = [
   {
     icon: "🎥",
-    title: "Add Video",
-    description: "Paste any YouTube URL to add to playlist",
+    title: "動画を追加",
+    description: "YouTubeのURLを貼り付けてプレイリストに追加",
   },
   {
     icon: "▶️",
-    title: "Playback",
-    description: "Play, pause, next, previous controls",
+    title: "再生コントロール",
+    description: "再生、一時停止、次へ、前へ",
   },
   {
     icon: "🔁",
-    title: "Loop",
-    description: "Loop current video or entire playlist",
+    title: "ループ再生",
+    description: "現在の動画またはプレイリスト全体をループ",
   },
   {
     icon: "🔀",
-    title: "Shuffle",
-    description: "Randomize playlist order",
+    title: "シャッフル",
+    description: "プレイリストをランダムに再生",
   },
   {
     icon: "📝",
-    title: "Playlist",
-    description: "Manage and organize your video playlist",
+    title: "プレイリスト",
+    description: "動画プレイリストの管理と整理",
   },
   {
     icon: "🎨",
-    title: "Retro UI",
-    description: "Classic QuickTime player aesthetics",
+    title: "レトロUI",
+    description: "クラシックなQuickTime風デザイン",
   },
 ];
 
 export const appMetadata = {
-  name: "Videos",
+  name: "ビデオ",
   version: "0.1",
   creator: {
     name: "Ryo Lu",

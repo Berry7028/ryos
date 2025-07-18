@@ -21,18 +21,18 @@ import { useSound, Sounds } from "@/hooks/useSound";
 const finderHelpItems = [
   {
     icon: "🔍",
-    title: "Browse Files",
-    description: "Navigate through your files and folders",
+    title: "ファイルを閲覧",
+    description: "ファイルとフォルダをナビゲートします",
   },
   {
     icon: "📁",
-    title: "Create Folders",
-    description: "Organize your files with new folders",
+    title: "フォルダを作成",
+    description: "新しいフォルダでファイルを整理します",
   },
   {
     icon: "🗑️",
-    title: "Delete Files",
-    description: "Remove unwanted files and folders",
+    title: "ファイルを削除",
+    description: "不要なファイルやフォルダを削除します",
   },
 ];
 
@@ -45,6 +45,7 @@ const finderMetadata = {
   },
   github: "https://github.com/ryokun6/ryo",
   icon: "/icons/mac.png",
+  description: "ファイルとアプリケーションを管理します",
 };
 
 interface MenuBarProps {
@@ -81,28 +82,30 @@ function Clock() {
   let displayTime;
 
   if (viewportWidth < 420) {
-    // For small screens: just time without AM/PM (e.g., "1:34")
-    const timeString = time.toLocaleTimeString([], {
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
-    });
-    displayTime = timeString.replace(/\s?(AM|PM)$/i, "");
-  } else if (viewportWidth >= 420 && viewportWidth <= 768) {
-    // For medium screens: time with AM/PM (e.g., "1:00 AM")
+    // For small screens: time with seconds (e.g., "1:34:45")
     displayTime = time.toLocaleTimeString([], {
       hour: "numeric",
       minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    });
+  } else if (viewportWidth >= 420 && viewportWidth <= 768) {
+    // For medium screens: time with seconds and AM/PM (e.g., "1:34:45 PM")
+    displayTime = time.toLocaleTimeString([], {
+      hour: "numeric",
+      minute: "2-digit",
+      second: "2-digit",
       hour12: true,
     });
   } else {
-    // For larger screens (> 768px): full date and time (e.g., "Wed May 7 1:34 AM")
+    // For larger screens: full date and time with seconds (e.g., "Wed May 7 1:34:45 PM")
     const shortWeekday = time.toLocaleDateString([], { weekday: "short" });
     const month = time.toLocaleDateString([], { month: "short" });
     const day = time.getDate();
     const timeString = time.toLocaleTimeString([], {
       hour: "numeric",
       minute: "2-digit",
+      second: "2-digit",
       hour12: true,
     });
     displayTime = `${shortWeekday} ${month} ${day} ${timeString}`;

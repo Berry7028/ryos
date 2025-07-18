@@ -73,7 +73,7 @@ export function VideosMenuBar({
   // Group videos by artist
   const videosByArtist = videos.reduce<Record<string, Video[]>>(
     (acc, video) => {
-      const artist = video.artist || 'Unknown Artist';
+      const artist = video.artist || 'アーティスト不明';
       if (!acc[artist]) {
         acc[artist] = [];
       }
@@ -96,7 +96,7 @@ export function VideosMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            File
+            ファイル
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -104,21 +104,21 @@ export function VideosMenuBar({
             onClick={onOpenVideo}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Open Video...
+            動画を開く...
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onShareVideo}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             disabled={videos.length === 0}
           >
-            Share Video...
+            動画を共有...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onClose}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Close
+            閉じる
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -131,7 +131,7 @@ export function VideosMenuBar({
             size="default"
             className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
           >
-            Controls
+            コントロール
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -140,28 +140,28 @@ export function VideosMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             disabled={videos.length === 0}
           >
-            {isPlaying ? "Pause" : "Play"}
+            {isPlaying ? "一時停止" : "再生"}
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onPrevious}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             disabled={videos.length === 0}
           >
-            Previous
+            前へ
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onNext}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             disabled={videos.length === 0}
           >
-            Next
+            次へ
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onFullScreen}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Full Screen
+            フルスクリーン
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
@@ -169,7 +169,7 @@ export function VideosMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
             <span className={cn(!isShuffled && "pl-4")}>
-              {isShuffled ? "✓ Shuffle" : "Shuffle"}
+              {isShuffled ? "✓ シャッフル" : "シャッフル"}
             </span>
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -177,7 +177,7 @@ export function VideosMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
             <span className={cn(!isLoopAll && "pl-4")}>
-              {isLoopAll ? "✓ Repeat All" : "Repeat All"}
+              {isLoopAll ? "✓ すべてリピート" : "すべてリピート"}
             </span>
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -185,7 +185,7 @@ export function VideosMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
             <span className={cn(!isLoopCurrent && "pl-4")}>
-              {isLoopCurrent ? "✓ Repeat One" : "Repeat One"}
+              {isLoopCurrent ? "✓ 1曲リピート" : "1曲リピート"}
             </span>
           </DropdownMenuItem>
         </DropdownMenuContent>
@@ -199,7 +199,7 @@ export function VideosMenuBar({
             size="default"
             className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
           >
-            Library
+            ライブラリ
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0 max-w-[180px] sm:max-w-[220px]">
@@ -207,7 +207,7 @@ export function VideosMenuBar({
             onClick={onAddVideo}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Add to Library...
+            ライブラリに追加...
           </DropdownMenuItem>
           
           {videos.length > 0 && (
@@ -218,7 +218,7 @@ export function VideosMenuBar({
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
                   <div className="flex justify-between w-full items-center overflow-hidden">
-                    <span className="truncate min-w-0">All Videos</span>
+                    <span className="truncate min-w-0">すべての動画</span>
                   </div>
                 </DropdownMenuSubTrigger>
                 <DropdownMenuSubContent className="px-0 max-w-[180px] sm:max-w-[220px]">
@@ -290,13 +290,13 @@ export function VideosMenuBar({
             onClick={onClearPlaylist}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Clear Library...
+            プレイリストをクリア...
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onResetPlaylist}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Reset Library...
+            ライブラリをリセット...
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -309,7 +309,7 @@ export function VideosMenuBar({
             size="default"
             className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
           >
-            Help
+            ヘルプ
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -317,7 +317,7 @@ export function VideosMenuBar({
             onClick={onShowHelp}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Videos Help
+            ビデオプレーヤーのヘルプ
           </DropdownMenuItem>
           <DropdownMenuItem
             onSelect={async () => {
@@ -326,26 +326,26 @@ export function VideosMenuBar({
               if (!shareUrl) return;
               try {
                 await navigator.clipboard.writeText(shareUrl);
-                toast.success("App link copied!", {
-                  description: `Link to ${appId} copied to clipboard.`,
+                toast.success("アプリのリンクをコピーしました!", {
+                  description: `アプリのリンクをクリップボードにコピーしました。`,
                 });
               } catch (err) {
-                console.error("Failed to copy app link: ", err);
-                toast.error("Failed to copy link", {
-                  description: "Could not copy link to clipboard.",
+                console.error("アプリのリンクをコピーできませんでした: ", err);
+                toast.error("アプリのリンクをコピーできませんでした", {
+                  description: "クリップボードにアプリのリンクをコピーできませんでした。",
                 });
               }
             }}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Share App...
+            アプリを共有...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onShowAbout}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            About Videos
+            ビデオプレーヤーについて
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

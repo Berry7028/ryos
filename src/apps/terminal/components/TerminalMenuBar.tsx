@@ -44,7 +44,7 @@ export function TerminalMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            File
+            ファイル
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -52,14 +52,14 @@ export function TerminalMenuBar({
             onClick={onClear}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Clear Terminal
+            ターミナルをクリア
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onClose}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Close
+            閉じる
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -72,19 +72,19 @@ export function TerminalMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            Edit
+            編集
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
           <DropdownMenuItem className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-            Copy
+            コピー
           </DropdownMenuItem>
           <DropdownMenuItem className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-            Paste
+            ペースト
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-            Select All
+            すべて選択
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -97,7 +97,7 @@ export function TerminalMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            View
+            表示
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -105,20 +105,20 @@ export function TerminalMenuBar({
             onClick={onIncreaseFontSize}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Increase Font Size
+            フォントサイズを大きく
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onDecreaseFontSize}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Decrease Font Size
+            フォントサイズを小さく
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onResetFontSize}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Reset Font Size
+            フォントサイズをリセット
           </DropdownMenuItem>
           {onToggleMute && (
             <>
@@ -128,7 +128,7 @@ export function TerminalMenuBar({
                 className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
               >
                 <span className={cn(!isMuted && "pl-4")}>
-                  {isMuted ? "✓ Mute Sounds" : "Mute Sounds"}
+                  {isMuted ? "✓ ミュート" : "ミュート"}
                 </span>
               </DropdownMenuItem>
             </>
@@ -144,7 +144,7 @@ export function TerminalMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            Help
+            ヘルプ
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -152,7 +152,7 @@ export function TerminalMenuBar({
             onClick={onShowHelp}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Terminal Help
+            ターミナルヘルプ
           </DropdownMenuItem>
           <DropdownMenuItem
             onSelect={async () => {
@@ -173,14 +173,14 @@ export function TerminalMenuBar({
             }}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Share App...
+            アプリを共有...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onShowAbout}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            About Terminal
+            ターミナルについて
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

@@ -4,38 +4,38 @@ import { SynthAppComponent } from "./components/SynthAppComponent";
 export const helpItems = [
   {
     icon: "🎹",
-    title: "Virtual Keyboard",
-    description: "Play notes with on-screen keys or computer keyboard",
+    title: "バーチャルキーボード",
+    description: "画面上のキーまたはコンピュータのキーボードで演奏",
   },
   {
     icon: "🎛️",
-    title: "Controls Panel",
-    description: "Toggle CONTROLS to tweak oscillators, envelope & effects",
+    title: "コントロールパネル",
+    description: "CONTROLSを切り替えてオシレーター、エンベロープ、エフェクトを調整",
   },
   {
     icon: "🔊",
-    title: "Presets",
-    description: "Save, load & manage custom sound presets",
+    title: "プリセット",
+    description: "カスタムサウンドプリセットの保存、読み込み、管理",
   },
   {
     icon: "🌈",
-    title: "3D Waveform",
-    description: "Live animated waveform when controls panel is open",
+    title: "3Dウェーブフォーム",
+    description: "コントロールパネルを開いている間のライブアニメーション波形",
   },
   {
     icon: "🎚️",
-    title: "Effects",
-    description: "Reverb, delay, distortion, chorus, phaser & bit-crusher",
+    title: "エフェクト",
+    description: "リバーブ、ディレイ、ディストーション、コーラス、フェイザー、ビットクラッシャー",
   },
   {
-    icon: "�",
-    title: "MIDI Input",
-    description: "Plug in a MIDI keyboard and play instantly",
+    icon: "🎛️",
+    title: "MIDI入力",
+    description: "MIDIキーボードを接続してすぐに演奏",
   },
 ];
 
 export const appMetadata = {
-  name: "Synth",
+  name: "シンセサイザー",
   version: "0.1",
   creator: {
     name: "Ryo Lu",

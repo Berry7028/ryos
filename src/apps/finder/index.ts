@@ -2,7 +2,7 @@ import { BaseApp } from "../base/types";
 import { FinderAppComponent } from "./components/FinderAppComponent";
 
 export const appMetadata = {
-  name: "Finder",
+  name: "ファインダー",
   version: "1.0.0",
   creator: {
     name: "Ryo",
@@ -15,39 +15,39 @@ export const appMetadata = {
 export const helpItems = [
   {
     icon: "🔍",
-    title: "Browse & Navigate",
+    title: "ブラウズとナビゲーション",
     description:
-      "Back/Forward buttons, address bar & Go menu for fast navigation",
+      "戻る/進むボタン、アドレスバー、移動メニューで素早くナビゲート",
   },
   {
     icon: "📁",
-    title: "File Management",
+    title: "ファイル管理",
     description:
-      "Create folders, rename, move, and drag items to organize files",
+      "フォルダの作成、名前変更、移動、ドラッグでの整理が可能",
   },
   {
     icon: "👀",
-    title: "View & Sort",
+    title: "表示と並べ替え",
     description:
-      "Switch Icon sizes and sort by name, kind, size, or date",
+      "アイコンサイズの変更や、名前、種類、サイズ、日付で並べ替え",
   },
   {
     icon: "📍",
-    title: "Quick Access",
+    title: "クイックアクセス",
     description:
-      "Jump to Documents, Applications, or Trash instantly from Go menu",
+      "移動メニューから書類、アプリケーション、ゴミ箱に即座にアクセス",
   },
   {
     icon: "ℹ️",
-    title: "Storage Info",
+    title: "ストレージ情報",
     description:
-      "See free space & item count in the window footer",
+      "ウィンドウ下部で空き容量とアイテム数を確認",
   },
   {
     icon: "🗑️",
-    title: "Trash",
+    title: "ゴミ箱",
     description:
-      "Drag files to Trash & Empty to permanently delete",
+      "ファイルをゴミ箱にドラッグして空にすると完全に削除",
   },
 ];
 

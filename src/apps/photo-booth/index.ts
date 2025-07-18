@@ -2,7 +2,7 @@ import { BaseApp } from "../base/types";
 import { PhotoBoothComponent } from "./components/PhotoBoothComponent";
 
 export const appMetadata = {
-  name: "Photo Booth",
+  name: "フォトブース",
   version: "1.0.0",
   creator: {
     name: "Ryo",
@@ -15,39 +15,39 @@ export const appMetadata = {
 export const helpItems = [
   {
     icon: "📸",
-    title: "Taking a Photo",
+    title: "写真を撮る",
     description:
-      "Click the large red camera button to capture a single image.",
+      "赤い大きなカメラボタンをクリックして写真を1枚撮影します。",
   },
   {
     icon: "⏱️",
-    title: "Quick Snaps",
+    title: "連続撮影",
     description:
-      "Click the timer button (left of the camera button) to start a sequence of four photos taken one second apart.",
+      "タイマーボタン（カメラボタンの左）をクリックすると、1秒間隔で4枚の写真を連続撮影します。",
   },
   {
     icon: "🎨",
-    title: "Applying Effects",
+    title: "エフェクトの適用",
     description:
-      "Click the 'Effects' button (right of the camera button) to open the effects panel and apply fun filters to your live camera view.",
+      "「エフェクト」ボタン（カメラボタンの右）をクリックして、ライブカメラの映像に楽しいフィルターを適用できます。",
   },
   {
     icon: "🖼️",
-    title: "Viewing Photos",
+    title: "写真の表示",
     description:
-      "Click the photo stack button (far left) to show or hide the photo strip at the bottom, displaying all your saved photos.",
+      "写真スタックボタン（一番左）をクリックすると、下部に保存したすべての写真が表示されるフォトストリップが表示/非表示になります。",
   },
   {
     icon: "💾",
-    title: "Downloading Photos",
+    title: "写真のダウンロード",
     description:
-      "Photos are automatically saved. Click on a photo in the photo strip to download it.",
+      "写真は自動的に保存されます。フォトストリップ内の写真をクリックするとダウンロードできます。",
   },
   {
     icon: "📷",
-    title: "Switching Cameras",
+    title: "カメラの切り替え",
     description:
-      "Use the 'View' menu in the menu bar to switch between available cameras if you have more than one connected.",
+      "メニューバーの「表示」メニューから、接続されている複数のカメラを切り替えることができます。",
   },
 ];
 

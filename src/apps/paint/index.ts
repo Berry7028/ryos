@@ -4,38 +4,38 @@ import type { BaseApp, PaintInitialData } from "../base/types";
 export const helpItems = [
   {
     icon: "✏️",
-    title: "Drawing Tools",
+    title: "描画ツール",
     description:
-      "Use the toolbar on the left to select different drawing tools like pencil, brush, shapes, and more.",
+      "左側のツールバーから、鉛筆、ブラシ、図形などの様々な描画ツールを選択できます。",
   },
   {
     icon: "🎨",
-    title: "Colors",
+    title: "色の選択",
     description:
-      "Select colors from the palette below the tools to change your drawing color.",
+      "ツールの下にあるカラーパレットから色を選んで、描画色を変更できます。",
   },
   {
     icon: "↩️",
-    title: "Undo",
-    description: "Press ⌘Z or use Edit > Undo to undo your last action.",
+    title: "元に戻す",
+    description: "⌘Zを押すか、編集メニューから「元に戻す」を選択して、直前の操作を取り消せます。",
   },
   {
     icon: "💾",
-    title: "Saving",
+    title: "保存",
     description:
-      "Use File > Save to save your artwork, or File > Save As to save it with a new name.",
+      "ファイルメニューから「保存」を選択して作品を保存するか、「別名で保存」を選んで新しい名前で保存できます。",
   },
   {
     icon: "🔲",
-    title: "Patterns",
+    title: "パターン",
     description:
-      "Choose from various patterns in the bottom palette to fill shapes and areas.",
+      "下部のパレットから様々なパターンを選んで、図形や領域を塗りつぶせます。",
   },
   {
     icon: "✨",
-    title: "Filters",
+    title: "フィルター",
     description:
-      "Apply invert, grayscale, brightness & more from the Filters menu.",
+      "フィルターメニューから、色反転、グレースケール、明るさ調整などの効果を適用できます。",
   },
 ];
 

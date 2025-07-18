@@ -93,7 +93,7 @@ export function FinderMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            File
+            ファイル
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -101,20 +101,20 @@ export function FinderMenuBar({
             onClick={onNewWindow}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            New Finder Window
+            新規Finderウィンドウ
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onNewFolder}
             disabled={!canCreateFolder}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            New Folder...
+            新規フォルダ...
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onImportFile}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Import from Device...
+            デバイスからインポート...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
@@ -122,14 +122,14 @@ export function FinderMenuBar({
             disabled={!canRename}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Rename...
+            名前を変更...
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onDuplicate}
             disabled={!canDuplicate}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Duplicate
+            複製
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           {isInTrash ? (
@@ -137,7 +137,7 @@ export function FinderMenuBar({
               onClick={onRestore}
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
-              Put Back
+              戻す
             </DropdownMenuItem>
           ) : (
             <DropdownMenuItem
@@ -145,7 +145,7 @@ export function FinderMenuBar({
               disabled={!canMoveToTrash}
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Move to Trash
+              ゴミ箱に入れる
             </DropdownMenuItem>
           )}
           <DropdownMenuItem
@@ -153,14 +153,14 @@ export function FinderMenuBar({
             disabled={isTrashEmpty}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Empty Trash...
+            ゴミ箱を空にする...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onClose}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Close
+            閉じる
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -173,29 +173,29 @@ export function FinderMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            Edit
+            編集
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
           <DropdownMenuItem className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-            Undo
+            取り消す
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-            Cut
+            カット
           </DropdownMenuItem>
           <DropdownMenuItem className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-            Copy
+            コピー
           </DropdownMenuItem>
           <DropdownMenuItem className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-            Paste
+            ペースト
           </DropdownMenuItem>
           <DropdownMenuItem className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-            Clear
+            削除
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-            Select All
+            すべてを選択
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -208,7 +208,7 @@ export function FinderMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            View
+            表示
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -217,21 +217,21 @@ export function FinderMenuBar({
             onCheckedChange={() => onViewTypeChange("small")}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by Small Icon</span>
+            <span>小さいアイコン</span>
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={viewType === "large"}
             onCheckedChange={() => onViewTypeChange("large")}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by Icon</span>
+            <span>アイコン</span>
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={viewType === "list"}
             onCheckedChange={() => onViewTypeChange("list")}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by List</span>
+            <span>リスト</span>
           </DropdownMenuCheckboxItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuCheckboxItem
@@ -239,28 +239,28 @@ export function FinderMenuBar({
             onCheckedChange={() => onSortTypeChange("name")}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by Name</span>
+            <span>名前</span>
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={sortType === "date"}
             onCheckedChange={() => onSortTypeChange("date")}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by Date</span>
+            <span>変更日</span>
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={sortType === "size"}
             onCheckedChange={() => onSortTypeChange("size")}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by Size</span>
+            <span>サイズ</span>
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={sortType === "kind"}
             onCheckedChange={() => onSortTypeChange("kind")}
             className="text-md h-6 px-3 pl-8 active:bg-gray-900 active:text-white flex justify-between items-center"
           >
-            <span>by Kind</span>
+            <span>種類</span>
           </DropdownMenuCheckboxItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -273,7 +273,7 @@ export function FinderMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            Go
+            移動
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">

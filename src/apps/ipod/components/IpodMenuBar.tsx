@@ -27,17 +27,17 @@ interface IpodMenuBarProps {
 }
 
 const translationLanguages = [
-  { label: "Original", code: null },
-  { label: "English", code: "en" },
-  { label: "中文", code: "zh-TW" },
+  { label: "オリジナル", code: null },
+  { label: "英語", code: "en" },
+  { label: "中国語（繁体字）", code: "zh-TW" },
   { label: "日本語", code: "ja" },
-  { label: "한국어", code: "ko" },
-  { label: "Español", code: "es" },
-  { label: "Français", code: "fr" },
-  { label: "Deutsch", code: "de" },
-  { label: "Português", code: "pt" },
-  { label: "Italiano", code: "it" },
-  { label: "Русский", code: "ru" },
+  { label: "韓国語", code: "ko" },
+  { label: "スペイン語", code: "es" },
+  { label: "フランス語", code: "fr" },
+  { label: "ドイツ語", code: "de" },
+  { label: "ポルトガル語", code: "pt" },
+  { label: "イタリア語", code: "it" },
+  { label: "ロシア語", code: "ru" },
 ];
 
 export function IpodMenuBar({
@@ -201,7 +201,7 @@ export function IpodMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            File
+            ファイル
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -209,14 +209,14 @@ export function IpodMenuBar({
             onClick={onAddTrack}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Add Song...
+            楽曲を追加...
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onShareSong}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             disabled={tracks.length === 0 || currentIndex === -1}
           >
-            Share Song...
+            楽曲を共有...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
@@ -224,20 +224,20 @@ export function IpodMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             disabled={tracks.length === 0}
           >
-            Export Library...
+            ライブラリをエクスポート...
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={handleImportLibrary}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Import Library...
+            ライブラリをインポート...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onClose}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Close
+            閉じる
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -250,7 +250,7 @@ export function IpodMenuBar({
             size="default"
             className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
           >
-            Controls
+            コントロール
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -259,21 +259,21 @@ export function IpodMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             disabled={tracks.length === 0}
           >
-            {isPlaying ? "Pause" : "Play"}
+            {isPlaying ? "一時停止" : "再生"}
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={previousTrack}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             disabled={tracks.length === 0}
           >
-            Previous
+            前の曲
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={nextTrack}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             disabled={tracks.length === 0}
           >
-            Next
+            次の曲
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
@@ -281,7 +281,7 @@ export function IpodMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
             <span className={cn(!isShuffled && "pl-4")}>
-              {isShuffled ? "✓ Shuffle" : "Shuffle"}
+              {isShuffled ? "✓ シャッフル" : "シャッフル"}
             </span>
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -289,7 +289,7 @@ export function IpodMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
             <span className={cn(!isLoopAll && "pl-4")}>
-              {isLoopAll ? "✓ Repeat All" : "Repeat All"}
+              {isLoopAll ? "✓ すべてリピート" : "すべてリピート"}
             </span>
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -297,7 +297,7 @@ export function IpodMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
             <span className={cn(!isLoopCurrent && "pl-4")}>
-              {isLoopCurrent ? "✓ Repeat One" : "Repeat One"}
+              {isLoopCurrent ? "✓ 1曲リピート" : "1曲リピート"}
             </span>
           </DropdownMenuItem>
         </DropdownMenuContent>
@@ -311,14 +311,14 @@ export function IpodMenuBar({
             size="default"
             className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
           >
-            View
+            表示
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
           {/* Lyrics Submenu */}
           <DropdownMenuSub>
             <DropdownMenuSubTrigger className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-              Lyrics
+              歌詞表示
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent className="px-0">
               <DropdownMenuItem
@@ -326,7 +326,7 @@ export function IpodMenuBar({
                 className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
               >
                 <span className={cn(!showLyrics && "pl-4")}>
-                  {showLyrics ? "✓ Show Lyrics" : "Show Lyrics"}
+                  {showLyrics ? "✓ 歌詞を表示" : "歌詞を表示"}
                 </span>
               </DropdownMenuItem>
 
@@ -349,8 +349,8 @@ export function IpodMenuBar({
                   )}
                 >
                   {chineseVariant === ChineseVariant.Traditional
-                    ? "✓ 繁體"
-                    : "繁體"}
+                    ? "✓ 繁体字"
+                    : "繁体字"}
                 </span>
               </DropdownMenuItem>
 
@@ -370,7 +370,7 @@ export function IpodMenuBar({
                     koreanDisplay !== KoreanDisplay.Original && "pl-4"
                   )}
                 >
-                  {koreanDisplay === KoreanDisplay.Original ? "✓ 한글" : "한글"}
+                  {koreanDisplay === KoreanDisplay.Original ? "✓ ハングル" : "ハングル"}
                 </span>
               </DropdownMenuItem>
 
@@ -387,8 +387,8 @@ export function IpodMenuBar({
                   )}
                 >
                   {lyricsAlignment === LyricsAlignment.FocusThree
-                    ? "✓ Multi"
-                    : "Multi"}
+                    ? "✓ マルチ"
+                    : "マルチ"}
                 </span>
               </DropdownMenuItem>
               <DropdownMenuItem
@@ -401,8 +401,8 @@ export function IpodMenuBar({
                   )}
                 >
                   {lyricsAlignment === LyricsAlignment.Center
-                    ? "✓ Single"
-                    : "Single"}
+                    ? "✓ シングル"
+                    : "シングル"}
                 </span>
               </DropdownMenuItem>
               <DropdownMenuItem
@@ -415,8 +415,8 @@ export function IpodMenuBar({
                   )}
                 >
                   {lyricsAlignment === LyricsAlignment.Alternating
-                    ? "✓ Alternating"
-                    : "Alternating"}
+                    ? "✓ 交互表示"
+                    : "交互表示"}
                 </span>
               </DropdownMenuItem>
             </DropdownMenuSubContent>
@@ -425,7 +425,7 @@ export function IpodMenuBar({
           {/* Translate Lyrics Submenu */}
           <DropdownMenuSub>
             <DropdownMenuSubTrigger className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-              Translate
+              翻訳
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent className="px-0 max-h-[400px] overflow-y-auto">
               {translationLanguages.map((lang) => (
@@ -454,7 +454,7 @@ export function IpodMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
             <span className={cn(!isBacklightOn && "pl-4")}>
-              {isBacklightOn ? "✓ Backlight" : "Backlight"}
+              {isBacklightOn ? "✓ バックライト" : "バックライト"}
             </span>
           </DropdownMenuItem>
 
@@ -463,7 +463,7 @@ export function IpodMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
             <span className={cn(!isLcdFilterOn && "pl-4")}>
-              {isLcdFilterOn ? "✓ LCD Filter" : "LCD Filter"}
+              {isLcdFilterOn ? "✓ LCDフィルター" : "LCDフィルター"}
             </span>
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -472,7 +472,7 @@ export function IpodMenuBar({
             disabled={!isPlaying}
           >
             <span className={cn(!isVideoOn && "pl-4")}>
-              {isVideoOn ? "✓ Video" : "Video"}
+              {isVideoOn ? "✓ ビデオ" : "ビデオ"}
             </span>
           </DropdownMenuItem>
 
@@ -482,7 +482,7 @@ export function IpodMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
             <span className={cn(currentTheme !== "classic" && "pl-4")}>
-              {currentTheme === "classic" ? "✓ Classic" : "Classic"}
+              {currentTheme === "classic" ? "✓ クラシック" : "クラシック"}
             </span>
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -490,7 +490,7 @@ export function IpodMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
             <span className={cn(currentTheme !== "black" && "pl-4")}>
-              {currentTheme === "black" ? "✓ Black" : "Black"}
+              {currentTheme === "black" ? "✓ ブラック" : "ブラック"}
             </span>
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -509,7 +509,7 @@ export function IpodMenuBar({
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
             <span className={cn(!isFullScreen && "pl-4")}>
-              {isFullScreen ? "✓ Full Screen" : "Full Screen"}
+              {isFullScreen ? "✓ フルスクリーン" : "フルスクリーン"}
             </span>
           </DropdownMenuItem>
         </DropdownMenuContent>
@@ -523,7 +523,7 @@ export function IpodMenuBar({
             size="default"
             className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
           >
-            Library
+            ライブラリ
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
@@ -535,7 +535,7 @@ export function IpodMenuBar({
             onClick={onAddTrack}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Add to Library...
+            ライブラリに追加...
           </DropdownMenuItem>
 
           {tracks.length > 0 && (
@@ -546,7 +546,7 @@ export function IpodMenuBar({
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
                   <div className="flex justify-between w-full items-center overflow-hidden">
-                    <span className="truncate min-w-0">All Songs</span>
+                    <span className="truncate min-w-0">すべての曲</span>
                   </div>
                 </DropdownMenuSubTrigger>
                 <DropdownMenuSubContent className="px-0 max-w-[180px] sm:max-w-[220px] max-h-[400px] overflow-y-auto">
@@ -622,13 +622,13 @@ export function IpodMenuBar({
             onClick={onClearLibrary}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Clear Library...
+            ライブラリをクリア...
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onSyncLibrary}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Sync Library...
+            ライブラリを同期...
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -641,7 +641,7 @@ export function IpodMenuBar({
             size="default"
             className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
           >
-            Help
+            ヘルプ
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -649,7 +649,7 @@ export function IpodMenuBar({
             onClick={onShowHelp}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            iPod Help
+            iPodのヘルプ
           </DropdownMenuItem>
           <DropdownMenuItem
             onSelect={async () => {
@@ -670,14 +670,14 @@ export function IpodMenuBar({
             }}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Share App...
+            アプリを共有...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onShowAbout}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            About iPod
+            iPodについて
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

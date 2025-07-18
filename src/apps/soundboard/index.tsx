@@ -4,38 +4,38 @@ import { SoundboardAppComponent } from "./components/SoundboardAppComponent";
 export const helpItems = [
   {
     icon: "🎙️",
-    title: "Record Slot",
-    description: "Click a slot to record audio; click again to stop",
+    title: "録音スロット",
+    description: "スロットをクリックして録音を開始、もう一度クリックで停止します",
   },
   {
     icon: "▶️",
-    title: "Keyboard Play",
-    description: "Press 1-9 to trigger sounds instantly",
+    title: "キーボード再生",
+    description: "1-9のキーを押して即座にサウンドを再生",
   },
   {
     icon: "🌊",
-    title: "Waveform View",
-    description: "See live waveform while recording or playing back",
+    title: "波形表示",
+    description: "録音・再生中にリアルタイムで波形を確認",
   },
   {
     icon: "✏️",
-    title: "Customize Slot",
-    description: "Add emoji & title to each sample for quick ID",
+    title: "スロットのカスタマイズ",
+    description: "絵文字とタイトルを追加してサンプルを簡単に識別",
   },
   {
     icon: "📂",
-    title: "Multiple Boards",
-    description: "Create, rename & switch boards for sets of sounds",
+    title: "複数ボード",
+    description: "サウンドセットごとにボードを作成・切り替え",
   },
   {
     icon: "🌍",
-    title: "Import / Export",
-    description: "Share boards as files; drag-drop to import",
+    title: "インポート / エクスポート",
+    description: "ボードをファイルとして共有、ドラッグ&ドロップでインポート",
   },
 ];
 
 export const appMetadata = {
-  name: "Soundboard",
+  name: "サウンドボード",
   version: "0.2",
   creator: {
     name: "Ryo Lu",

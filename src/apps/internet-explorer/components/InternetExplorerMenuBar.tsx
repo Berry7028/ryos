@@ -163,7 +163,7 @@ export function InternetExplorerMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            File
+            表示
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -171,27 +171,27 @@ export function InternetExplorerMenuBar({
             onClick={onFocusUrlInput}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Go to URL
+            取り消す
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onSharePage}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Share Page...
+            ページを共有...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onOpenTimeMachine}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Open Time Machine
+            タイムマシンを開く
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onClose}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Close
+            カット
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -204,7 +204,7 @@ export function InternetExplorerMenuBar({
             size="default"
             className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
           >
-            Edit
+            編集
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -212,7 +212,7 @@ export function InternetExplorerMenuBar({
             onClick={onRefresh}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Refresh
+            更新
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onStop}
@@ -223,14 +223,14 @@ export function InternetExplorerMenuBar({
                 : "text-md h-6 px-3 active:bg-gray-900 active:text-white"
             }
           >
-            Stop
+            コピー
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           
           {/* Year Submenu */}
           <DropdownMenuSub>
             <DropdownMenuSubTrigger className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-              Year
+              年
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent className="min-w-[120px] max-h-[400px] overflow-y-auto">
               {/* Future Years */}
@@ -274,7 +274,7 @@ export function InternetExplorerMenuBar({
           {/* Language Submenu */}
           <DropdownMenuSub>
             <DropdownMenuSubTrigger className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-              Language
+              言語
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent className="min-w-[160px]">
               <DropdownMenuItem
@@ -401,7 +401,7 @@ export function InternetExplorerMenuBar({
           {/* Location Submenu */}
           <DropdownMenuSub>
             <DropdownMenuSubTrigger className="text-md h-6 px-3 active:bg-gray-900 active:text-white">
-              Location
+              場所
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent className="min-w-[160px]">
               <DropdownMenuItem
@@ -532,7 +532,7 @@ export function InternetExplorerMenuBar({
             onClick={onEditFuture}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Edit Future...
+            未来を編集...
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -545,7 +545,7 @@ export function InternetExplorerMenuBar({
             size="default"
             className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
           >
-            Favorites
+            お気に入り
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0 max-w-xs">
@@ -553,14 +553,14 @@ export function InternetExplorerMenuBar({
             onClick={onHome}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Go Home
+            ホームページ
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onAddFavorite}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Add to Favorites...
+            お気に入りに追加...
           </DropdownMenuItem>
           {favorites.length > 0 && (
             <>
@@ -573,7 +573,7 @@ export function InternetExplorerMenuBar({
                 onClick={onClearFavorites}
                 className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
               >
-                Clear Favorites...
+                お気に入りの整理...
               </DropdownMenuItem>
             </>
           )}
@@ -581,7 +581,7 @@ export function InternetExplorerMenuBar({
             onClick={onResetFavorites}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Reset Favorites...
+            お気に入りを初期化
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -611,7 +611,7 @@ export function InternetExplorerMenuBar({
                 : "text-md h-6 px-3 active:bg-gray-900 active:text-white"
             }
           >
-            Back
+            戻る
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onGoForward}
@@ -622,7 +622,7 @@ export function InternetExplorerMenuBar({
                 : "text-md h-6 px-3 active:bg-gray-900 active:text-white"
             }
           >
-            Forward
+            進む
           </DropdownMenuItem>
 
           {history.length > 0 && (
@@ -657,7 +657,7 @@ export function InternetExplorerMenuBar({
                 onClick={onClearHistory}
                 className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
               >
-                Clear History...
+                閲覧の履歴を削除
               </DropdownMenuItem>
             </>
           )}
@@ -672,7 +672,7 @@ export function InternetExplorerMenuBar({
             size="default"
             className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
           >
-            Help
+            ヘルプ
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -680,7 +680,7 @@ export function InternetExplorerMenuBar({
             onClick={onShowHelp}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Internet Explorer Help
+            Internet Explorer のヘルプ
           </DropdownMenuItem>
           <DropdownMenuItem
             onSelect={async () => {
@@ -701,14 +701,14 @@ export function InternetExplorerMenuBar({
             }}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Share App...
+            アプリを共有...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onShowAbout}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            About Internet Explorer
+            Internet Explorer について
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

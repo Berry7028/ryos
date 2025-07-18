@@ -4,51 +4,51 @@ import { ChatsAppComponent } from "./components/ChatsAppComponent";
 export const helpItems = [
   {
     icon: "💬",
-    title: "Chat with Ryo",
+    title: "Ryoとチャット",
     description:
-      "Type your message to chat with Ryo, generate code, or help with ryo.",
+      "Ryoと会話したり、コードを生成したり、ryoのサポートを受けたりできます。",
   },
   {
     icon: "#️⃣",
-    title: "Join Chat Rooms",
+    title: "チャットルームに参加",
     description:
-      "Connect with netizens in public chat rooms.",
+      "公開チャットルームで他のユーザーと交流できます。",
   },
   {
     icon: "🎤",
-    title: "Push to Talk",
+    title: "プッシュ・トゥ・トーク",
     description:
-      "Hold Space or tap the microphone button to record and send voice messages.",
+      "スペースキーを押すかマイクボタンをタップして、音声メッセージを録音・送信します。",
   },
   {
     icon: "📝",
-    title: "Control TextEdit",
+    title: "テキストエディタの操作",
     description:
-      "Ask Ryo to read, insert, replace, or delete lines in your open TextEdit document.",
+      "Ryoに依頼して、開いているテキストエディタのドキュメントの読み取り、行の挿入・置換・削除ができます。",
   },
   {
     icon: "🚀",
-    title: "Control Apps",
+    title: "アプリの操作",
     description:
-      "Ask Ryo to launch or close other applications like Internet Explorer or Video Player.",
+      "Ryoに依頼して、Internet Explorerやビデオプレーヤーなどの他のアプリケーションを起動・終了できます。",
   },
   {
     icon: "💾",
-    title: "Save Transcript",
+    title: "トーク履歴を保存",
     description:
-      "Save your current chat conversation with Ryo as a Markdown file.",
+      "現在のRyoとの会話をMarkdownファイルとして保存できます。",
   },
 ];
 
 export const appMetadata = {
-  name: "Chats",
+  name: "チャット",
   version: "1.0",
   creator: {
     name: "Ryo Lu",
     url: "https://ryo.lu",
   },
   github: "https://github.com/ryokun6/ryo",
-  icon: "/icons/question.png",
+  icon: "/icons/internet.png",
 };
 
 export const ChatsApp: BaseApp = {

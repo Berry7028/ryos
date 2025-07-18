@@ -33,12 +33,12 @@ export function HelpDialog({
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="bg-system7-window-bg border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.5)] max-w-[600px]">
         <DialogHeader>
-          <DialogTitle className="font-normal text-[16px]">Help</DialogTitle>
-          <DialogDescription className="sr-only">Help and documentation for {appName}</DialogDescription>
+          <DialogTitle className="font-normal text-[16px]">ヘルプ</DialogTitle>
+          <DialogDescription className="sr-only">{appName}のヘルプとドキュメンテーション</DialogDescription>
         </DialogHeader>
         <div className="p-6 pt-2">
           <p className="text-2xl mb-4 font-apple-garamond">
-            Welcome to {appName}
+            {appName}へようこそ
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {helpItems.map((item) => (

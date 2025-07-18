@@ -26,28 +26,28 @@ interface PhotoReference {
 
 // Split effects into two categories
 const cssFilters: Effect[] = [
-  { name: "Rainbow", filter: "hue-rotate(180deg) saturate(200%)" },
-  { name: "Vibrant", filter: "saturate(200%) contrast(150%)" },
-  { name: "Cold Blue", filter: "hue-rotate(240deg) saturate(150%)" },
-  { name: "High Contrast", filter: "contrast(200%) brightness(110%)" },
-  { name: "Normal", filter: "none" },
-  { name: "Vintage", filter: "sepia(80%) brightness(90%) contrast(120%)" },
-  { name: "X-Ray", filter: "invert(100%) hue-rotate(180deg) hue-rotate(180deg)" },
-  { name: "Neon", filter: "brightness(120%) contrast(120%) saturate(200%) hue-rotate(310deg)" },
-  { name: "Black & White", filter: "brightness(90%) hue-rotate(20deg) saturate(0%)" },
+  { name: "レインボー", filter: "hue-rotate(180deg) saturate(200%)" },
+  { name: "ビビッド", filter: "saturate(200%) contrast(150%)" },
+  { name: "クールブルー", filter: "hue-rotate(240deg) saturate(150%)" },
+  { name: "ハイコントラスト", filter: "contrast(200%) brightness(110%)" },
+  { name: "ノーマル", filter: "none" },
+  { name: "ビンテージ", filter: "sepia(80%) brightness(90%) contrast(120%)" },
+  { name: "X線", filter: "invert(100%) hue-rotate(180deg) hue-rotate(180deg)" },
+  { name: "ネオン", filter: "brightness(120%) contrast(120%) saturate(200%) hue-rotate(310deg)" },
+  { name: "モノクロ", filter: "brightness(90%) hue-rotate(20deg) saturate(0%)" },
 ];
 
 const distortionFilters: Effect[] = [
-  { name: "Bulge", filter: "bulge(-0.5)" },
-  { name: "Stretch", filter: "stretch(1.0)" },
-  { name: "Pinch", filter: "pinch(2.0)" },
-  { name: "Twirl", filter: "twist(-8.0)" },
-  { name: "Fish Eye", filter: "fisheye(1.5)" },
-  { name: "Squeeze", filter: "squeeze(1.0)" },
-  // New exciting effects
-  { name: "Kaleidoscope", filter: "kaleidoscope(0.5)" },
-  { name: "Ripple", filter: "ripple(1.5)" },
-  { name: "Glitch", filter: "glitch(2.0)" },
+  { name: "膨張", filter: "bulge(-0.5)" },
+  { name: "引き伸ばし", filter: "stretch(1.0)" },
+  { name: "つまむ", filter: "pinch(2.0)" },
+  { name: "渦巻き", filter: "twist(-8.0)" },
+  { name: "魚眼", filter: "fisheye(1.5)" },
+  { name: "絞り込み", filter: "squeeze(1.0)" },
+  // 新しいエキサイティングなエフェクト
+  { name: "万華鏡", filter: "kaleidoscope(0.5)" },
+  { name: "波紋", filter: "ripple(1.5)" },
+  { name: "グリッチ", filter: "glitch(2.0)" },
 ];
 
 // Combined array for compatibility with existing code
@@ -112,7 +112,7 @@ export function PhotoBoothComponent({
   const [cameraError, setCameraError] = useState<string | null>(null);
   const [isLoadingCamera, setIsLoadingCamera] = useState(false);
   const [selectedEffect, setSelectedEffect] = useState<Effect>(
-    effects.find((effect) => effect.name === "Normal") || effects[0]
+    effects.find((effect) => effect.name === "ノーマル") || effects[0]
   );
   const [availableCameras, setAvailableCameras] = useState<MediaDeviceInfo[]>(
     []
@@ -1078,7 +1078,7 @@ export function PhotoBoothComponent({
               onClick={toggleEffects}
               className="h-10 px-5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-[16px]"
             >
-              Effects
+              エフェクト
             </Button>
           </div>
 
@@ -1086,7 +1086,7 @@ export function PhotoBoothComponent({
             isOpen={showHelp}
             onOpenChange={setShowHelp}
             helpItems={helpItems}
-            appName="Photo Booth"
+            appName="フォトブース"
           />
           <AboutDialog
             isOpen={showAbout}

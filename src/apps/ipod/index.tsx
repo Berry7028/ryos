@@ -4,33 +4,33 @@ import { IpodAppComponent } from "./components/IpodAppComponent";
 export const helpItems = [
   {
     icon: "🎵",
-    title: "Add Songs",
-    description: "Paste YouTube URLs to add music to your iPod.",
+    title: "楽曲を追加",
+    description: "YouTubeのURLを貼り付けてiPodに音楽を追加します。",
   },
   {
     icon: "🔄",
-    title: "Wheel Navigation",
-    description: "Use the click wheel to browse menus and your music library.",
+    title: "ホイール操作",
+    description: "クリックホイールを使ってメニューや音楽ライブラリを操作します。",
   },
   {
     icon: "⏯️",
-    title: "Playback Controls",
-    description: "Play, pause, skip tracks, and control your current song.",
+    title: "再生コントロール",
+    description: "再生、一時停止、曲のスキップなど、現在の曲をコントロールします。",
   },
   {
     icon: "🎤",
-    title: "Synced Lyrics",
-    description: "View time-synced lyrics and get instant translations.",
+    title: "歌詞同期表示",
+    description: "時間同期された歌詞を表示し、即座に翻訳を取得できます。",
   },
   {
     icon: "⚙️",
-    title: "Playback Modes",
-    description: "Enable shuffle, repeat songs or playlists, and more.",
+    title: "再生モード",
+    description: "シャッフル再生、リピート再生、プレイリスト再生などの設定が可能です。",
   },
   {
     icon: "📺",
-    title: "Display & Fullscreen",
-    description: "Adjust backlight, themes, and switch to fullscreen video.",
+    title: "表示設定",
+    description: "バックライトの調整、テーマの変更、フルスクリーンビデオへの切り替えができます。",
   },
 ];
 

@@ -49,7 +49,7 @@ export function SynthMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            File
+            ファイル
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -57,20 +57,20 @@ export function SynthMenuBar({
             onClick={onAddPreset}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            New Preset
+            新規プリセット
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={onReset}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Reset Synth
+            シンセをリセット
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onClose}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Close
+            閉じる
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -83,7 +83,7 @@ export function SynthMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            Presets
+            プリセット
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -110,7 +110,7 @@ export function SynthMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            View
+            表示
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -120,7 +120,7 @@ export function SynthMenuBar({
           >
             <span className={cn(labelType !== "note" && "pl-4")}>
               {labelType === "note" ? "✓ " : ""}
-              Note Labels
+              ノート名を表示
             </span>
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -129,7 +129,7 @@ export function SynthMenuBar({
           >
             <span className={cn(labelType !== "key" && "pl-4")}>
               {labelType === "key" ? "✓ " : ""}
-              Key Labels
+              キー名を表示
             </span>
           </DropdownMenuItem>
           <DropdownMenuItem
@@ -138,7 +138,7 @@ export function SynthMenuBar({
           >
             <span className={cn(labelType !== "off" && "pl-4")}>
               {labelType === "off" ? "✓ " : ""}
-              No Labels
+              ラベルを非表示
             </span>
           </DropdownMenuItem>
         </DropdownMenuContent>
@@ -152,7 +152,7 @@ export function SynthMenuBar({
             size="default"
             className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
           >
-            Help
+            ヘルプ
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -160,7 +160,7 @@ export function SynthMenuBar({
             onClick={onShowHelp}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Synth Help
+            シンセのヘルプ
           </DropdownMenuItem>
           <DropdownMenuItem
             onSelect={async () => {
@@ -181,14 +181,14 @@ export function SynthMenuBar({
             }}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Share App...
+            アプリを共有...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onShowAbout}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            About Synth
+            シンセについて
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

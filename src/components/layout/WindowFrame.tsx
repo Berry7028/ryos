@@ -430,6 +430,13 @@ export function WindowFrame({
       appId,
       getSafeAreaBottomInset,
       updateInstanceWindowState,
+      instanceId,
+      playWindowCollapse,
+      playWindowExpand,
+      setWindowPosition,
+      setWindowSize,
+      updateWindowState,
+      vibrateMaximize,
     ]
   );
 
@@ -678,7 +685,8 @@ export function WindowFrame({
           className={cn(
             "w-full h-full flex flex-col border border-border rounded-xl overflow-hidden bg-card/95 backdrop-blur-sm",
             isForeground ? "modern-shadow-lg" : "modern-shadow",
-            "transition-all duration-200 ease-in-out hover-lift"
+            "transition-all duration-200 ease-in-out hover-lift",
+            "outline-none focus:outline-none focus-visible:outline-none"
           )}
           style={getSwipeStyle()}
         >

@@ -13,43 +13,43 @@ export const TerminalApp: BaseApp = {
   helpItems: [
     {
       icon: "💻",
-      title: "Basic Commands",
+      title: "基本コマンド",
       description:
-        "Use commands like ls, cd, cat, pwd, clear, and touch to navigate and manage files.",
+        "ls、cd、cat、pwd、clear、touchなどのコマンドを使用して、ファイルを操作・管理します。",
     },
     {
       icon: "🧭",
-      title: "Navigation",
+      title: "ナビゲーション",
       description:
-        "Browse the same virtual file system as Finder with familiar Unix commands.",
+        "Finderと同じ仮想ファイルシステムを、おなじみのUnixコマンドで操作できます。",
     },
     {
       icon: "⌨️",
-      title: "Command History",
+      title: "コマンド履歴",
       description:
-        "Press ↑ / ↓ arrows to cycle through previous commands and re-run them quickly.",
+        "↑ / ↓ キーで以前のコマンドを表示し、素早く再実行できます。",
     },
     {
       icon: "🤖",
-      title: "AI Assistant",
+      title: "AIアシスタント",
       description:
-        'Type "ryo &lt;prompt&gt;" to chat with Ryo AI directly inside the terminal.',
+        '"ryo &lt;プロンプト&gt;"と入力して、ターミナル内でRyo AIとチャットできます。',
     },
     {
       icon: "📝",
-      title: "File Editing",
+      title: "ファイル編集",
       description:
-        "Open documents in TextEdit (edit) or Vim-style editor (vim) right from the prompt.",
+        "コマンドプロンプトから直接、テキストエディタ（edit）またはVimスタイルのエディタ（vim）でドキュメントを開けます。",
     },
     {
       icon: "🔊",
-      title: "Terminal Sounds",
+      title: "ターミナルサウンド",
       description:
-        "Distinct sounds for output, errors & AI replies. Toggle in View ▸ Sounds.",
+        "出力、エラー、AIの返答に異なるサウンドが再生されます。表示 ▸ サウンド で切り替えられます。",
     },
   ],
   metadata: {
-    name: "Terminal",
+    name: "ターミナル",
     version: "1.0",
     creator: {
       name: "Ryo Lu",

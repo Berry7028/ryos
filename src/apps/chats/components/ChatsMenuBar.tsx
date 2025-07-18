@@ -108,7 +108,7 @@ export function ChatsMenuBar({
               size="default"
               className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
             >
-              File
+              編集
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -116,14 +116,14 @@ export function ChatsMenuBar({
               onClick={onSaveTranscript}
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
-              Save Transcript...
+              ルームに参加...
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={onClearChats}
               disabled={currentRoom !== null}
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
-              Clear Chat
+              チャットをクリア
             </DropdownMenuItem>
             <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
 
@@ -134,7 +134,7 @@ export function ChatsMenuBar({
                 onClick={() => onLogout?.()}
                 className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
               >
-                Log Out
+                ログアウト
               </DropdownMenuItem>
             ) : (
               // When not logged in: Show Create Account and Login
@@ -143,13 +143,13 @@ export function ChatsMenuBar({
                   onClick={onSetUsername}
                   className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
                 >
-                  Create Account...
+                  アカウント作成...
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={onVerifyToken}
                   className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
                 >
-                  Login...
+                  ログイン...
                 </DropdownMenuItem>
               </>
             )}
@@ -159,7 +159,7 @@ export function ChatsMenuBar({
               onClick={onClose}
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
-              Close
+              取り消す
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -172,7 +172,7 @@ export function ChatsMenuBar({
               size="default"
               className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
             >
-              Chats
+              チャット
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
@@ -185,7 +185,7 @@ export function ChatsMenuBar({
               onClick={onAddRoom}
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
-              New Chat...
+              ヘルプ...
             </DropdownMenuItem>
 
             {/* Show separator between menu actions and chat list */}
@@ -255,7 +255,7 @@ export function ChatsMenuBar({
               size="default"
               className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
             >
-              Sound
+              音声
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -301,7 +301,7 @@ export function ChatsMenuBar({
               size="default"
               className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
             >
-              View
+              表示
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -310,20 +310,20 @@ export function ChatsMenuBar({
               onClick={onIncreaseFontSize}
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
-              Increase Font Size
+              拡大
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={onDecreaseFontSize}
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
-              Decrease Font Size
+              縮小
             </DropdownMenuItem>
             <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
             <DropdownMenuItem
               onClick={onResetFontSize}
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
-              Reset Font Size
+              リセット
             </DropdownMenuItem>
             <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
             {/* Sidebar Toggle */}
@@ -335,7 +335,7 @@ export function ChatsMenuBar({
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
               <span className={cn(!isSidebarVisible && "pl-4")}>
-                {isSidebarVisible ? "✓ Show Rooms" : "Show Rooms"}
+                {isSidebarVisible ? "✓ サイドバーを表示" : "サイドバーを表示"}
               </span>
             </DropdownMenuItem>
           </DropdownMenuContent>
@@ -349,7 +349,7 @@ export function ChatsMenuBar({
               size="default"
               className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
             >
-              Help
+              ヘルプ
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -357,7 +357,7 @@ export function ChatsMenuBar({
               onClick={onShowHelp}
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
-              Chats Help
+              ルームを退出
             </DropdownMenuItem>
             <DropdownMenuItem
               onSelect={async () => {
@@ -378,14 +378,14 @@ export function ChatsMenuBar({
               }}
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
-              Share App...
+              アプリを共有...
             </DropdownMenuItem>
             <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
             <DropdownMenuItem
               onClick={onShowAbout}
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
-              About Chats
+              りょうチャット
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

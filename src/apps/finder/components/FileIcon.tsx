@@ -249,12 +249,12 @@ export function FileIcon({
         {renderIcon()}
       </div>
       <span
-        className={`text-center px-1 font-geneva-12 break-words truncate ${
+        className={`text-center px-1.5 py-0.5 rounded font-sans font-normal break-words truncate ${
           sizes.text
         } ${
           isSelected || (isDropTarget && isDirectory)
-            ? "bg-black text-white"
-            : "bg-white text-black"
+            ? "bg-blue-600 text-white"
+            : "bg-white/90 text-gray-900 shadow-sm"
         }`}
       >
         {name}

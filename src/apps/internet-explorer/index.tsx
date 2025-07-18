@@ -4,45 +4,45 @@ import { InternetExplorerAppComponent } from "./components/InternetExplorerAppCo
 export const helpItems = [
   {
     icon: "🌐",
-    title: "Browse the Web",
+    title: "ウェブを閲覧",
     description:
-      "Enter URLs and use navigation buttons (Back, Forward, Refresh, Stop).",
+      "URLを入力し、ナビゲーションボタン（戻る、進む、更新、停止）を使用します。",
   },
   {
     icon: "🌌",
-    title: "Travel Through Time",
+    title: "時を旅する",
     description:
-      "Select a year from the dropdown to view websites from the past or future.",
+      "ドロップダウンから年を選択して、過去や未来のウェブサイトを表示します。",
   },
   {
     icon: "✨",
-    title: "History Reimagined",
+    title: "再現された歴史",
     description:
-      "AI reconstructs very old sites (pre-1996) and imagines future web experiences.",
+      "AIが非常に古いサイト（1996年以前）を再構築し、将来のウェブ体験を想像します。",
   },
   {
     icon: "⭐",
-    title: "Save Favorites",
+    title: "お気に入りに保存",
     description:
-      "Add sites and specific years to your Favorites bar for easy access.",
+      "サイトや特定の年をお気に入りバーに追加して、簡単にアクセスできます。",
   },
   {
     icon: "🔮",
-    title: "Explore Time Nodes",
+    title: "タイムノードを探索",
     description:
-      "Click the clock icon in the address bar to see available snapshots of the current site across time.",
+      "アドレスバーの時計アイコンをクリックして、現在のサイトの時系列のスナップショットを確認します。",
   },
   {
     icon: "🔗",
-    title: "Share Your Journey",
+    title: "共有する",
     description:
-      "Use the Share button to generate a link to the exact page and year you're viewing.",
+      "共有ボタンを使用して、表示中の正確なページと年のリンクを生成します。",
   },
 ];
 
 export const appMetadata = {
   version: "1.02",
-  name: "Internet Explorer",
+  name: "インターネット エクスプローラー",
   creator: {
     name: "Ryo Lu",
     url: "https://ryo.lu",

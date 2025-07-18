@@ -52,7 +52,7 @@ export function PhotoBoothMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            File
+            ファイル
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -60,21 +60,21 @@ export function PhotoBoothMenuBar({
             onClick={onExportPhotos}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Export Photos
+            写真をエクスポート
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onClearPhotos}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Clear All Photos
+            すべての写真を削除
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onClose}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Close
+            閉じる
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -87,7 +87,7 @@ export function PhotoBoothMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            Camera
+            カメラ
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -98,7 +98,7 @@ export function PhotoBoothMenuBar({
               className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
             >
               <span className={cn(selectedCameraId !== camera.deviceId && "pl-4")}>
-                {selectedCameraId === camera.deviceId ? "✓ " : ""}{camera.label || `Camera ${camera.deviceId.slice(0, 4)}`}
+                {selectedCameraId === camera.deviceId ? "✓ " : ""}{camera.label || `カメラ ${camera.deviceId.slice(0, 4)}`}
               </span>
             </DropdownMenuItem>
           ))}
@@ -112,7 +112,7 @@ export function PhotoBoothMenuBar({
             size="default"
             className="h-6 text-md px-2 py-1 border-none hover:bg-gray-200 active:bg-gray-900 active:text-white focus-visible:ring-0"
           >
-            Effects
+            エフェクト
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -138,7 +138,7 @@ export function PhotoBoothMenuBar({
             size="default"
             className="h-6 px-2 py-1 text-md focus-visible:ring-0 hover:bg-gray-200 active:bg-gray-900 active:text-white"
           >
-            Help
+            ヘルプ
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" sideOffset={1} className="px-0">
@@ -146,7 +146,7 @@ export function PhotoBoothMenuBar({
             onClick={onShowHelp}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Photo Booth Help
+            フォトブースのヘルプ
           </DropdownMenuItem>
           <DropdownMenuItem
             onSelect={async () => {
@@ -155,26 +155,26 @@ export function PhotoBoothMenuBar({
               if (!shareUrl) return;
               try {
                 await navigator.clipboard.writeText(shareUrl);
-                toast.success("App link copied!", {
-                  description: `Link to ${appId} copied to clipboard.`,
+                toast.success("アプリのリンクをコピーしました!", {
+                  description: `${appId}のリンクをクリップボードにコピーしました。`,
                 });
               } catch (err) {
-                console.error("Failed to copy app link: ", err);
-                toast.error("Failed to copy link", {
-                  description: "Could not copy link to clipboard.",
+                console.error("アプリのリンクをコピーできませんでした: ", err);
+                toast.error("リンクのコピーに失敗しました", {
+                  description: "クリップボードにリンクをコピーできませんでした。",
                 });
               }
             }}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            Share App...
+            アプリを共有...
           </DropdownMenuItem>
           <DropdownMenuSeparator className="h-[2px] bg-black my-1" />
           <DropdownMenuItem
             onClick={onShowAbout}
             className="text-md h-6 px-3 active:bg-gray-900 active:text-white"
           >
-            About Photo Booth
+            フォトブースについて
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
