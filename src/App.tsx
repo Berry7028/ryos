@@ -7,11 +7,13 @@ import { useAppStoreShallow } from "@/stores/helpers";
 import { BootScreen } from "./components/dialogs/BootScreen";
 import { getNextBootMessage, clearNextBootMessage } from "./utils/bootMessage";
 import { AnyApp } from "./apps/base/types";
+import { LockScreen } from "./components/LockScreen/LockScreen";
+import { LockScreenProvider, useLockScreen } from "./contexts/LockScreenContext";
 
 // Convert registry to array
 const apps: AnyApp[] = Object.values(appRegistry);
 
-function App() {
+const AppContent = () => {
   const { displayMode, isFirstBoot, setHasBooted } = useAppStoreShallow(
     (state) => ({
       displayMode: state.displayMode,
@@ -19,14 +21,23 @@ function App() {
       setHasBooted: state.setHasBooted,
     })
   );
-  const [bootScreenMessage, setBootScreenMessage] = useState<string | null>(
-    null
-  );
-  const [showBootScreen, setShowBootScreen] = useState(false);
+
 
   useEffect(() => {
     applyDisplayMode(displayMode);
   }, [displayMode]);
+
+  useEffect(() => {
+    // Set first boot flag without showing boot screen
+    if (isFirstBoot) {
+      setHasBooted();
+    }
+  }, [isFirstBoot, setHasBooted]);
+
+  const { isLocked, unlock } = useLockScreen();
+  console.log('isLocked:', isLocked); // Debug log
+  const [showBootScreen, setShowBootScreen] = useState(false);
+  const [bootScreenMessage, setBootScreenMessage] = useState<string | null>(null);
 
   useEffect(() => {
     // Only show boot screen for system operations (reset/restore/format/debug)
@@ -35,19 +46,19 @@ function App() {
       setBootScreenMessage(persistedMessage);
       setShowBootScreen(true);
     }
+  }, []);
 
-    // Set first boot flag without showing boot screen
-    if (isFirstBoot) {
-      setHasBooted();
-    }
-  }, [isFirstBoot, setHasBooted]);
+  if (isLocked) {
+    console.log('Rendering LockScreen'); // Debug log
+    return <LockScreen onUnlock={unlock} />;
+  }
 
-  if (showBootScreen) {
+  if (showBootScreen && bootScreenMessage) {
     return (
       <BootScreen
         isOpen={true}
         onOpenChange={() => {}}
-        title={bootScreenMessage || "System Restoring..."}
+        title={bootScreenMessage}
         onBootComplete={() => {
           clearNextBootMessage();
           setShowBootScreen(false);
@@ -66,5 +77,13 @@ function App() {
     </>
   );
 }
+
+const App = () => {
+  return (
+    <LockScreenProvider>
+      <AppContent />
+    </LockScreenProvider>
+  );
+};
 
 export default App;
