@@ -6,11 +6,11 @@ import { SoundboardApp } from "@/apps/soundboard";
 import { FinderApp } from "@/apps/finder";
 import { PaintApp } from "@/apps/paint";
 import { VideosApp } from "@/apps/videos";
-
 import { PhotoBoothApp } from "@/apps/photo-booth";
 import { SynthApp } from "@/apps/synth";
 import { IpodApp } from "@/apps/ipod";
 import { TerminalApp } from "@/apps/terminal";
+import { utsurundesuApp } from "@/apps/utsurundesu";
 import { appIds } from "./appIds";
 import type {
   BaseApp,
@@ -48,6 +48,13 @@ export const appRegistry = {
     windowConfig: {
       defaultSize: { width: 400, height: 300 },
       minSize: { width: 300, height: 200 },
+    } as WindowConstraints,
+  },
+  [utsurundesuApp.metadata.id]: {
+    ...utsurundesuApp.metadata,
+    windowConfig: {
+      defaultSize: { width: 800, height: 1000 },
+      minSize: { width: 600, height: 800 },
     } as WindowConstraints,
   },
   [SoundboardApp.id]: {
